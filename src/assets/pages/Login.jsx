@@ -76,7 +76,7 @@ const Login = () => {
                             <img src={showPassword ? EyeOn : EyeOff} alt="ícono de ojo" />
                             </span>
                             <input
-                            {...register("password", { required: true })}
+                            {...register("password", { required: true, minLength: 8, maxLength: 8 })}
                             placeholder="Password"
                             className={`form-control rounded-5 border-2 ${errors.password ? "border border-danger" : ""} `}
                             id="password"
@@ -84,7 +84,11 @@ const Login = () => {
                             />
 
                             {errors.password && (
-                            <small className="text-danger">This field is required</small>
+                            <small className="text-danger">
+                                { errors.password.type === "required" && "This field is required"}
+                                { errors.password.type === "minLength" && "Must be at least 8 characters"}
+                                { errors.password.type === "maxLength" && "Must be 8 characters"}
+                            </small>
                             )}
                             <label htmlFor="password">Password</label>
                         </div>
