@@ -16,7 +16,7 @@
 }
 
 .bg-fondo {
-    background-image: url("/public/bg-fondo.jpg");
+    background-image: url("/bg-fondo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
