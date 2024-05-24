@@ -1,2 +1,47 @@
-/* ESTILOS GLOBALES */
-/* TIPOGRAFÍA - PALETA DE COLORES */
+/* PALETA DE COLORES */
+:root {
+    --color-primary: #1A2A2F;
+    --color-secondary: #00507C;
+}
+
+/* FORM LOGIN */
+.bg-login {
+    background-color: var(--color-secondary);
+    height: 100vh;
+}
+
+.bg-form {
+    background-color: var(--color-primary);
+    border-radius: 0 50px 50px 0;
+}
+
+.bg-fondo {
+    background-image: url("/public/bg-fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50px 0 0 50px;
+}
+
+label {
+    color: var(--color-secondary) !important;
+}
+
+.eye-icon {
+    top: 6px;
+    right: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn-login {
+   width: 250px;
+   font-weight: 500;
+}
+
+/* MEDIA QUERIES */
+@media (width <= 768px) {
+    .bg-form {
+        border-radius: 50px;
+    }
+}
