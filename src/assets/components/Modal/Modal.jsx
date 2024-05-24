@@ -5,7 +5,7 @@ const Modal = () => {
                 Vertically centered modal
             </button>
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content px-2 px-md-4">
                         <div className="modal-header pb-2">
                             <h5 className="modal-title">Important information</h5>
