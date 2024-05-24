@@ -1,10 +1,17 @@
-import './App.css'
+import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './assets/pages/Login';
+
 
 function App() {
 
   return (
     <>
-      <h1>ICL GURU</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={ <Login /> }  />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
