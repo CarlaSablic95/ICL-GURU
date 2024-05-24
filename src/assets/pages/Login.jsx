@@ -23,7 +23,7 @@ const Login = () => {
         console.log("Password:", password);
   };
 
-  const isFormInvalid = !!errors.username && !!errors.email && !!errors.password;
+  const isFormInvalid = !!errors.username || !!errors.email || !!errors.password;
 
   return (
       <section className="bg-login d-flex  align-items-center">
@@ -37,7 +37,7 @@ const Login = () => {
                             <input
                             {...register("username", { required: true })}
                             placeholder="Username"
-                            className={`form-control rounded-5 border-2 ${isFormInvalid  ? "border border-danger" : ""} `}
+                            className={`form-control rounded-5 border-2 ${errors.username ? "border border-danger" : ""} `}
                             id="username"
                             type="text"
                             />
@@ -54,7 +54,7 @@ const Login = () => {
                                 pattern: /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                             })}
                             placeholder="Email"
-                            className={`form-control rounded-5 border-2 ${isFormInvalid  ? "border border-danger" : ""} `}
+                            className={`form-control rounded-5 border-2 ${errors.email ? "border border-danger" : ""} `}
                             id="email"
                             type="email"
                             />
@@ -78,7 +78,7 @@ const Login = () => {
                             <input
                             {...register("password", { required: true })}
                             placeholder="Password"
-                            className={`form-control rounded-5 border-2 ${isFormInvalid  ? "border border-danger" : ""} `}
+                            className={`form-control rounded-5 border-2 ${errors.password ? "border border-danger" : ""} `}
                             id="password"
                             type={showPassword ? "text" : "password"}
                             />
