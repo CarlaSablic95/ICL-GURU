@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../components/Button/Button";
 import EyeOff from "/icons/eye-off.svg";
-import EyeOn from "/icons/vite.svg";
+import EyeOn from "/icons/eye-on.svg";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
