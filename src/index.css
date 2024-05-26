@@ -42,7 +42,7 @@
 }
 
 label {
-    color: var(--color-secondary) !important;
+    color: var(--secondary-color) !important;
 }
 
 .eye-icon {
@@ -73,6 +73,41 @@ label {
 .modal.fade.show {
     background-color: var(--bg-modal);
 }
+
+/* PANEL */
+/* FIXED MENU */
+.menu-list:hover {
+    cursor: pointer;
+}
+
+.is-active {
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* STATUS INDICATOR */
+.status-indicator {
+    width: 20px;
+    height: 20px;
+  }
+
+  .blink {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes blink {  
+    0% { 
+        opacity: 1.0; 
+    }
+     50% { 
+        opacity: 0.0; 
+    }
+    100% { 
+        opacity: 1.0; 
+    }
+  }
 
 /* MEDIA QUERIES */
 @media (width <= 768px) {
