@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from "react-router-dom";
 import LoginForm from './assets/pages/LoginForm';
 import Dashboard from './assets/pages/Dashboard';
-import Patients from './assets/components/Patients/Patients';
+import Patients from './assets/pages/Patients';
 import AddPatients from './assets/pages/AddPatients';
 import Calculations from './assets/pages/Calculations';
 import Clinics from './assets/pages/Clinics';
