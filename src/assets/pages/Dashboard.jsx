@@ -1,4 +1,4 @@
-import Patients from "../components/Patients/Patients";
+import Patients from "../pages/Patients";
 
 const Dashboard = () => {
   return (
