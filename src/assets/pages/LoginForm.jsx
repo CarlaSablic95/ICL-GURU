@@ -93,7 +93,7 @@ const LoginForm = () => {
                             <label htmlFor="password">Password</label>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <Button name="Login" type="submit" bg_color="#00507C" disabled={ !isFormInvalid } />
+                            <Button name="Login" type="submit" bg_color="#00507C" rounded="3rem" disabled={ !isFormInvalid } />
                         </div>
 
                         <p className="text-center py-3"><a href="#" className="text-white text-decoration-none">I forgot my password</a></p>
