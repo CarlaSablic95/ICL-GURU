@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Button from "../components/Button/Button";
 import EyeOff from "/icons/eye-off.svg";
 import EyeOn from "/icons/eye-on.svg";
 
@@ -93,7 +92,7 @@ const Login = () => {
                             <label htmlFor="password">Password</label>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <Button name="Login" type="submit" bg_color="#00507C" disabled={ !isFormInvalid } />
+                            <button type="submit" disabled={ !isFormInvalid } className="btn rounded-5 text-uppercase mb-3 border-0 text-white btn-login" style={{ backgroundColor: "#00507C" }}>Login</button>
                         </div>
 
                         <p className="text-center py-3"><a href="#" className="text-white text-decoration-none">I forgot my password</a></p>
