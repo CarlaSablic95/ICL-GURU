@@ -1,7 +1,7 @@
 import './App.css';
 // import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Sidebar from "./assets/components/Sidebar/Sidebar";
+import Header from "./assets/components/Header/Header";
 import LoginForm from './assets/pages/LoginForm';
 import Dashboard from './assets/pages/Dashboard';
 import Patients from './assets/pages/Patients';
@@ -18,7 +18,7 @@ function App() {
     const location = useLocation();
 
     return (
-      location.pathname !== "/login" && ( <Sidebar /> )
+      location.pathname !== "/login" && ( <Header /> )
     )
   }
 
