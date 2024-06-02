@@ -2,7 +2,7 @@ const ModalLogout = () => {
   return (
     <div className="col-10 px-5">
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content px-2 px-md-4">
                         <div className="modal-header pb-2">
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
