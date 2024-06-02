@@ -5,6 +5,7 @@
     --tertiary-color: #3DC2DD;
     --gray-color: #475467;
     --bg-modal: #D9D9D9D6;
+    --white-color: #fefefe;
 }
 
 /* SCROLLBAR */
@@ -15,7 +16,41 @@
 *::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, var(--secondary-color) 0%, var(--primary-color) 100%);
     border-radius: 8px;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--white-color);
+}
+
+/* PATIENTS */
+
+.bg-color {
+    background-color: var(--tertiary-color) !important;
+}
+
+header {
+    background-color: var(--secondary-color);
+}
+
+.table>:not(caption)>*>* {
+    background-color: #EDF2FB;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    background-color: #ABC4FF;
+}
+
+.table-striped>tbody>tr:nth-of-type(even)>* {
+    background-color: #D7E3FC;
+}
+
+.table-striped>tbody>tr>td:nth-child(1) {
+    border-radius: 5px 0 0 5px;
+}
+
+.table-striped>tbody>tr>td:nth-child(11) {
+    border-radius:  0 5px 5px 0;
+}
+
+.bi-pencil-square, .bi-trash {
+    cursor: pointer;
 }
 
 /* FORM LOGIN */
@@ -41,7 +76,11 @@
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.36));
 }
 
-label {
+.button {
+    background-color: var(--tertiary-color);
+}
+
+.form-floating > label {
     color: var(--secondary-color) !important;
 }
 
@@ -81,13 +120,36 @@ label {
 }
 
 .is-active {
-    border-bottom: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--tertiary-color);
+
+}
+
+/* FORM ADD PATIENT */
+.form-check .form-check-input {
+    float: right;
+    margin-left: 1.5em;
 }
 
 /* STATUS INDICATOR */
 .status-indicator {
     width: 20px;
     height: 20px;
+  }
+
+  .complete-status {
+    background-color: #05FF00;
+  }
+
+  .missing-data {
+    background-color: #FF0000;
+  }
+
+  .half-completed {
+    background-color: #EEE63A;
+  }
+
+  .no-data-loading {
+    background-color: #5D5C5C;
   }
 
   .blink {
