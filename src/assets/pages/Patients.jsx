@@ -1,55 +1,47 @@
+import PatientsList from "../components/Table/PatientsList";
+import ModalCreatePatient from "../components/Modal/ModalCreatePatient";
+import ModalEditPatient from "../components/Modal/ModalEditPatient";
+import ModalDeletePatient from "../components/Modal/ModalDeletePatient";
+
 const Patients = () => {
   return (
-    <div className="col-10 px-5">
-      <h1 className="mb-4 text-center text-uppercase">Patients</h1>
-      <div className="d-flex justify-content-center align-items-center mb-4">
-        <form className="d-flex" role="search">
-          <input
-            className="form-control me-2 rounded-5"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button className="btn btn-primary rounded-5" type="submit">
-            Search
-          </button>
+    <div className="container">
+      <h1 className="mb-4 text-center text-uppercase pt-5">Patients</h1>
+      <div className="row pb-4 mb-4">
+        <form className="d-flex justify-content-end" role="search">
+          <input className="form-control me-2 rounded-5 border-2 border-dark shadow-sm" style={{ width: "60%", backgroundColor: "#D7E3FC" }} type="search" placeholder="Find patients by name or surname" aria-label="Search" />
+          <div className="dropdown-center">
+            <button className="btn button rounded-5 dropdown-toggle fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Filter <i className="bi bi-funnel" />
+            </button>
+            <div className="dropdown-menu p-4" style={{ minWidth: '300px' }}>
+              <div className="mb-2">
+                <select className="form-select">
+                  <option value="">Sex</option>
+                  <option value="F">Female</option>
+                  <option value="M">Masculine</option>
+                </select>
+              </div>
+              <div className="mb-2">
+                <select className="form-select">
+                  <option value="">Patient ID</option>
+                  <option value="1">ID 1</option>
+                  <option value="2">ID 2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button type="button" className="btn button rounded-5 ms-4 fw-bold" data-bs-toggle="modal" data-bs-target="#modalForm">Add patients <i className="bi bi-person-add" /></button>
         </form>
       </div>
-
-      <div className="table-responsive">
-        <table className="table table-striped">
-          <thead>
-            <tr className="text-center">
-              <th scope="col">Lastname</th>
-              <th scope="col">Name</th>
-              <th scope="col">Age</th>
-              <th scope="col">Sex</th>
-              <th scope="col">DOB</th>
-              <th scope="col">Patient ID</th>
-              <th scope="col">MRN</th>
-              <th scope="col">Organization</th>
-              <th scope="col">Follow Up</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="text-center">
-              <td className="align-middle">Jaik</td>
-              <td className="align-middle">Mia</td>
-              <td className="align-middle">32</td>
-              <td className="align-middle">F</td>
-              <td className="align-middle">Nov 18, 1997</td>
-              <td className="align-middle">20341</td>
-              <td className="align-middle">GKJ09</td>
-              <td className="align-middle">Test Organitation</td>
-              <td className="align-middle">
-                <div className="status-indicator blink rounded-circle bg-danger mx-auto"></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <PatientsList />
+      <ModalCreatePatient />
+      <ModalEditPatient />
+      <ModalDeletePatient />
     </div>
   );
 };
 
 export default Patients;
+
+
