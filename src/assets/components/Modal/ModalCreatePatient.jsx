@@ -1,4 +1,6 @@
 import Button from "../Button/Button";
+import BaseForm from "../BaseForm/BaseForm";
+import { Input, InputRadio } from "../BaseForm/Input";
 
 const ModalCreatePatient = () => {
     return (
@@ -9,52 +11,67 @@ const ModalCreatePatient = () => {
                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body pb-0">
-                <form className="px-4">
-                <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Name <span className="text-danger">*</span></label>
-                    <input type="text" className="form-control" id="name" placeholder="example" />
-                </div>
+                    <BaseForm>
+                        <Input 
+                            label="Name"
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="example"
+                        />
 
-                <div className="mb-3">
-                    <label htmlFor="lastname" className="form-label">Last name <span className="text-danger">*</span></label>
-                    <input type="text" className="form-control" id="lastname" placeholder="example" />
-                </div>
+                            <Input 
+                            label="Last name"
+                            id="lastname"
+                            name="lastname"
+                            type="text"
+                            placeholder="example"
+                        />
 
-                <div className="mb-3">
-                    <label htmlFor="dob" className="form-label">Date of birth <span className="text-danger">*</span></label>
-                    <input type="date" className="form-control" id="dob" />
-                </div>
+                        <Input 
+                            label="Date of birth"
+                            type="date"
+                        />
 
-                    <p className="mb-0">Sex <span className="text-danger">*</span></p>
-                    <div className="d-flex justify-content-evenly mb-3">
-                        <div className="form-check">
-                    <label className="form-check-label" htmlFor="flexRadioDefault1">
-                        Female
-                    </label>
-                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    </div>
+                        <div className="mb-3">
+                            <label className="mb-0">Sex<span className="text-danger">*</span></label>
+                                <div className="d-flex justify-content-evenly">
+                                    <InputRadio 
+                                    label="Female"
+                                    name="sex"
+                                    value="female"
+                                    type="radio"
+                                />
 
-                    <div className="form-check">
-                        <label className="form-check-label" htmlFor="flexRadioDefault2">
-                        Male
-                        </label>
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    </div>
-                    </div>
+                                <InputRadio 
+                                    label="Male"
+                                    name="sex"
+                                    value="male"
+                                    type="radio"
+                                />
+                                </div>
+                        </div>
 
-                    <div className="mb-3">
-                        <label htmlFor="mrn" className="form-label">Medical records number (MRN) <span className="text-danger">*</span></label>
-                        <input type="text" className="form-control" id="mrn" placeholder="000000" />
-                    </div>
+                        <Input 
+                            label="Medical records number (MRN)"
+                            id="mrn"
+                            name="mrn"
+                            type="text"
+                            placeholder="00000"
+                        />
 
-                    <div className="mb-3">
-                        <label htmlFor="patientsID" className="form-label">Patients ID <span className="text-danger">*</span></label>
-                        <input type="text" className="form-control" id="patientsID" placeholder="000000" />
-                    </div>
-                </form>
-                </div>
-                <div className="modal-footer border-0 d-flex justify-content-center">
-                    <Button type="submit" name="Submit" bg_color="#3DC2DD" />
+                        <Input 
+                            label="Patients ID"
+                            id="id"
+                            name="id"
+                            type="text"
+                            placeholder="00000"
+                        />
+
+                        <div className="modal-footer border-0 d-flex justify-content-center">
+                            <Button type="submit" name="Submit" bg_color="#3DC2DD" />
+                        </div>
+                    </BaseForm>
                 </div>
                 </div>
             </div>
