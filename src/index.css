@@ -19,14 +19,28 @@
     border: 2px solid var(--white-color);
 }
 
-/* PATIENTS */
+/* MENÚ VERSIÓN DESKTOP/MOBILE */
 
-.bg-color {
-    background-color: var(--tertiary-color) !important;
+header, .navbar-mobile {
+    background-color: var(--secondary-color);
 }
 
-header {
-    background-color: var(--secondary-color);
+.offcanvas.offcanvas-end {
+    left: -1px;
+    width: 300px;
+}
+
+.offcanvas.offcanvas-end {
+    transform: translateX(0%);
+}
+
+.offcanvas-backdrop {
+    background-color: var(--bg-modal);
+}
+
+/* PATIENTS */
+.bg-color {
+    background-color: var(--tertiary-color) !important;
 }
 
 .table>:not(caption)>*>* {
