@@ -5,7 +5,7 @@ import ModalDeletePatient from "../components/Modal/ModalDeletePatient";
 
 const Patients = () => {
   return (
-    <div className="container">
+    <div className="col-10 px-5">
       <h1 className="mb-4 text-center text-uppercase pt-5">Patients</h1>
       <div className="row pb-4 mb-4">
         <form className="d-flex justify-content-end" role="search">
@@ -34,9 +34,14 @@ const Patients = () => {
           <button type="button" className="btn button rounded-5 ms-4 fw-bold" data-bs-toggle="modal" data-bs-target="#modalForm">Add patients <i className="bi bi-person-add" /></button>
         </form>
       </div>
+      {/* Tabla de pacientes */}
       <PatientsList />
+
+      {/* Modales con 2 formularios para crear y editar pacientes. */}
       <ModalCreatePatient />
       <ModalEditPatient />
+
+      {/* Modal de condirmación de eliminación del paciente */}
       <ModalDeletePatient />
     </div>
   );
