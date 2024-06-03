@@ -5,7 +5,7 @@ import ModalDeletePatient from "../components/Modal/ModalDeletePatient";
 
 const Patients = () => {
   return (
-    <div className="col-10 px-5">
+    <div className="col-10 px-2 px-md-5">
       <h1 className="mb-4 text-center text-uppercase pt-5">Patients</h1>
       <div className="row pb-4 mb-4">
         <form className="d-flex justify-content-end" role="search">
