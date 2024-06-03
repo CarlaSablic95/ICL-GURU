@@ -4,17 +4,17 @@ const PatientsList = () => {
         <table className="table table-striped">
           <thead>
             <tr className="text-center border-bottom border-black">
-              <th scope="col">Lastname</th>
-              <th scope="col">Name</th>
-              <th scope="col">Age</th>
-              <th scope="col">Sex</th>
-              <th scope="col">DOB</th>
-              <th scope="col">Patient ID</th>
-              <th scope="col">MRN</th>
-              <th scope="col">Organization</th>
-              <th scope="col">Follow Up</th>
-              <th scope="col">Edit patients</th>
-              <th scope="col">Delete patients</th>
+              <th scope="col" className="align-middle">Lastname</th>
+              <th scope="col" className="align-middle">Name</th>
+              <th scope="col" className="align-middle">Age</th>
+              <th scope="col" className="align-middle">Sex</th>
+              <th scope="col" className="align-middle">DOB</th>
+              <th scope="col" className="align-middle">Patient ID</th>
+              <th scope="col" className="align-middle">MRN</th>
+              <th scope="col" className="align-middle">Organization</th>
+              <th scope="col" className="align-middle">Follow Up</th>
+              <th scope="col" className="align-middle">Edit patients</th>
+              <th scope="col" className="align-middle">Delete patients</th>
             </tr>
           </thead>
           <tbody>
