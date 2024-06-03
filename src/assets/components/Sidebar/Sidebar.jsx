@@ -30,7 +30,7 @@ const routes = [
 
 const Sidebar = () => {
     return (
-            <aside className="col-2 shadow vh-100 d-none d-md-flexflex-column justify-content-start align-items-center">
+            <aside className="col-2 shadow vh-100 d-none d-lg-flex flex-column justify-content-start align-items-center">
                 <ul className="list-unstyled">
                 <li className="mb-3">
                 <a className="text-dark text-decoration-none menu-list fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="bi bi-key-fill fs-4"></i></a></li>
