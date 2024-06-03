@@ -2,6 +2,7 @@ import './App.css';
 // import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./assets/components/Header/Header";
+import NavbarMobile from './assets/components/NavbarMobile/NavbarMobile';
 import LoginForm from './assets/pages/LoginForm';
 import Patients from './assets/pages/Patients';
 import Calculations from './assets/pages/Calculations';
@@ -24,8 +25,9 @@ function App() {
     <>
       <Router>
         <section className='container-fluid'>
-          <div className="row">
+          <div className="row justify-content-center">
             <Navigation />
+            <NavbarMobile />
 
         {/* Configuración de rutas */}
           <Routes>
