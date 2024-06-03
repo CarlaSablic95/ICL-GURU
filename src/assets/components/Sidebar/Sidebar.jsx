@@ -30,7 +30,6 @@ const routes = [
 
 const Sidebar = () => {
     return (
-        <>
             <aside className="col-2 shadow vh-100 d-flex flex-column justify-content-start align-items-center">
                 <ul className="list-unstyled">
                 <li className="mb-3">
@@ -48,7 +47,6 @@ const Sidebar = () => {
                 <a className="text-dark text-decoration-none menu-list fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="bi bi-box-arrow-right me-1 fs-5"></i>Logout</a></li>
                 </ul>
             </aside>
-        </>
     )
 }
 
