@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
-import BaseForm from "../BaseForm/BaseForm";
-import { Input, InputRadio } from "../BaseForm/Input";
+import BaseForm from "../Form/BaseForm";
+import { Input, InputRadio } from "../Form/Input";
 
 const ModalCreatePatient = () => {
     return (
