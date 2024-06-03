@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./assets/components/Header/Header";
 import LoginForm from './assets/pages/LoginForm';
-import Dashboard from './assets/pages/Dashboard';
 import Patients from './assets/pages/Patients';
 import Calculations from './assets/pages/Calculations';
 import Clinics from './assets/pages/Clinics';
@@ -16,7 +15,6 @@ function App() {
 
   const Navigation = () => {
     const location = useLocation();
-
     return (
       location.pathname !== "/login" && ( <Header /> )
     )
@@ -26,7 +24,7 @@ function App() {
     <>
       <Router>
         <section className='container-fluid'>
-          <div className="row align-items-center">
+          <div className="row">
             <Navigation />
 
         {/* Configuración de rutas */}
@@ -34,15 +32,10 @@ function App() {
             {/* <Route path="/login" element={ userAuthenticated ? navigate("/", { replace: true }) : <LoginForm />} /> */}
             {/* <Route exact path="/" element={ userAuthenticated ? <Dashboard /> : navigate("/login", { replace: true })} /> */}
             <Route path="/login" element={ <LoginForm />} />
-            <Route exact path="/" element={ <Dashboard /> } />
-            <Route path="/patients" element={<Patients />} />
-
+            <Route exact path="/" element={ <Patients /> } />
             <Route path="/calculations" element={<Calculations />} />
-
             <Route path="/clinics" element={<Clinics />} />
-
             <Route path="/my-account" element={<MyAccount />} />
-
             <Route path="/account" element={<Account />} />
           </Routes>
           </div>
