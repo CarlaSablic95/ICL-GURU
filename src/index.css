@@ -38,6 +38,10 @@ header, .navbar-mobile {
     background-color: var(--bg-modal);
 }
 
+.is-active > .bi::before {
+    color: #3DC2DD !important;
+  }
+
 /* PATIENTS */
 .bg-color {
     background-color: var(--tertiary-color) !important;
