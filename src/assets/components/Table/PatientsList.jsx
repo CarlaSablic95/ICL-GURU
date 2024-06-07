@@ -1,7 +1,10 @@
+import Edit from "/icons/edit-1.svg";
+import Delete from "/icons/delete.svg";
+
 const PatientsList = () => {
     return (
-        <div className="table-responsive p-2" style={{ backgroundColor:"#EDF2FB" }}>
-        <table className="table table-striped">
+        <div className="table-responsive" style={{ backgroundColor:"#EDF2FB" }}>
+        <table className="table table-striped table-patient">
           <thead>
             <tr className="text-center border-bottom border-black">
               <th scope="col" className="align-middle">Lastname</th>
@@ -14,7 +17,7 @@ const PatientsList = () => {
               <th scope="col" className="align-middle">Organization</th>
               <th scope="col" className="align-middle">Follow Up</th>
               <th scope="col" className="align-middle">Edit patients</th>
-              <th scope="col" className="align-middle">Delete patients</th>
+              <th scope="col" className="align-middle">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -31,10 +34,10 @@ const PatientsList = () => {
                 <div className="status-indicator border border-black rounded-circle complete-status mx-auto"></div>
               </td>
               <td className="align-middle">
-                <i className="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#ModalEditPatient"/>
+                <img src={ Edit }  style={{ width:"18px", cursor:"pointer" }} data-bs-toggle="modal" data-bs-target="#ModalEditPatient"/>
               </td>
               <td className="align-middle">
-                <i className="bi bi-trash" data-bs-toggle="modal" data-bs-target="#modalDelete"/>
+                <img src={ Delete } style={{ width: "22px", cursor:"pointer"}}  data-bs-toggle="modal" data-bs-target="#modalDelete"/>
               </td>
             </tr>
 
@@ -51,10 +54,10 @@ const PatientsList = () => {
                 <div className="status-indicator border border-black blink rounded-circle missing-data mx-auto"></div>
               </td>
               <td className="align-middle">
-                <i className="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#ModalEditPatient"/>
+                <img src={ Edit }  style={{ width:"18px", cursor:"pointer" }} data-bs-toggle="modal" data-bs-target="#ModalEditPatient"/>
               </td>
               <td className="align-middle">
-                <i className="bi bi-trash" data-bs-toggle="modal" data-bs-target="#modalDelete"/>
+                <img src={ Delete } style={{ width: "22px", cursor:"pointer"}}  data-bs-toggle="modal" data-bs-target="#modalDelete"/>
               </td>
             </tr>
 
@@ -71,10 +74,10 @@ const PatientsList = () => {
                 <div className="status-indicator border border-black rounded-circle no-data-loading mx-auto"></div>
               </td>
               <td className="align-middle">
-                <i className="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#ModalEditPatient" />
+              <img src={ Edit }  style={{ width:"18px", cursor:"pointer" }} data-bs-toggle="modal" data-bs-target="#ModalEditPatient"/>
               </td>
               <td className="align-middle">
-                <i className="bi bi-trash" data-bs-toggle="modal" data-bs-target="#modalDelete"/>
+                <img src={ Delete } style={{ width: "22px", cursor:"pointer"}}  data-bs-toggle="modal" data-bs-target="#modalDelete"/>
               </td>
             </tr>
 
@@ -91,10 +94,10 @@ const PatientsList = () => {
                 <div className="status-indicator border border-black rounded-circle half-completed mx-auto"></div>
               </td>
               <td className="align-middle">
-                <i className="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#ModalEditPatient"/>
+                <img src={ Edit }  style={{ width:"18px", cursor:"pointer" }} data-bs-toggle="modal" data-bs-target="#ModalEditPatient"/>
               </td>
               <td className="align-middle">
-                <i className="bi bi-trash" data-bs-toggle="modal" data-bs-target="#modalDelete"/>
+                <img src={ Delete } style={{ width: "22px", cursor:"pointer"}}  data-bs-toggle="modal" data-bs-target="#modalDelete"/>
               </td>
             </tr>
           </tbody>
