@@ -69,7 +69,7 @@ const ModalCreatePatient = () => {
                         />
 
                         <div className="modal-footer border-0 d-flex justify-content-center">
-                            <Button type="submit" name="Submit" bg_color="#3DC2DD" />
+                            <Button type="submit" title="Submit" bg_color="#3DC2DD" />
                         </div>
                     </BaseForm>
                 </div>
