@@ -4,27 +4,27 @@ const routes = [
   {
     path: "/",
     link: "Patients",
-    icon: "bi bi-person",
+    icon: "./icons/user.svg",
   },
   {
     path: "/calculations",
     link: "Calculations",
-    icon: "bi bi-file-bar-graph-fill",
+    icon: "./icons/calculation.svg",
   },
   {
     path: "/clinics",
     link: "Clinics",
-    icon: "bi bi-building",
+    icon: "./icons/clinic.svg",
   },
   {
     path: "/account",
     link: "Account",
-    icon: "bi bi-gear",
+    icon: "./icons/settings.svg",
   },
   {
     path: "/my-account",
     link: "My account",
-    icon: "bi bi-pencil",
+    icon: "./icons/edit.svg",
   },
 ];
 
@@ -33,14 +33,15 @@ const NavbarMobile = () => {
     <nav className="navbar navbar-mobile py-4 d-block d-lg-none">
       <div className="container-fluid">
         <button
-          className="navbar-toggler bg-warning"
+          className="navbar-toggler rounded-5"
+          style={{ backgroundColor:"#3DC2DD" }}
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span> <span>Menú</span>
         </button>
         <a className="navbar-brand bg-warning" href="#">
           Logo
@@ -74,7 +75,7 @@ const NavbarMobile = () => {
                 </a>
               </li>
               {routes.map((route) => (
-                <li key={route.path} className="mb-3">
+          <li key={route.path} className="mb-3">
                   <NavLink
                     key={route.path}
                     to={route.path}
@@ -84,7 +85,7 @@ const NavbarMobile = () => {
                       }`
                     }
                   >
-                    <i className={`${route.icon} fs-5`}></i> {route.link}
+                        <img src={`${route.icon}`}  style={{ width:"30px"}} className="pb-2" /> {route.link}
                   </NavLink>
                 </li>
               ))}
@@ -94,7 +95,7 @@ const NavbarMobile = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 >
-                  <i className="bi bi-box-arrow-right me-1 fs-5"></i>Logout
+                  <img src="./icons/logout.svg"  style={{ width:"30px" }} /> Logout
                 </a>
               </li>
             </ul>
