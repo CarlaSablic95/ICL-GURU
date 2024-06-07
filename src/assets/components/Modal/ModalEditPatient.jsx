@@ -73,14 +73,10 @@ const ModalEditPatient = () => {
                         </BaseForm>
                     </div>
                     <div className="modal-footer border-0 d-flex justify-content-evenly">
-                        <Button type="submit" name="Update" bg_color="#3DC2DD" />
-                        {/* <Button type="submit" name="Delete" bg_color="#FF0000" data-bs-toggle="modal" data-bs-target="#modalDelete" /> */}
+                        <Button type="submit" title="Update" bg_color="#3DC2DD" />
                     </div>
                     </div>
                 </div>
-
-            {/* MODAL ELIMINAR PACIENTE
-            <ModalDeletePatient /> */}
             </div>
 
         </>
