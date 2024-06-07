@@ -19,6 +19,11 @@
     border: 2px solid var(--white-color);
 }
 
+/* ÍCONOS */
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    font-weight: 600 !important;
+}
+
 /* MENÚ VERSIÓN DESKTOP/MOBILE */
 
 header, .navbar-mobile {
@@ -38,16 +43,20 @@ header, .navbar-mobile {
     background-color: var(--bg-modal);
 }
 
-.is-active > .bi::before {
+.is-active > img {
     color: #3DC2DD !important;
   }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+}
 
 /* PATIENTS */
 .bg-color {
     background-color: var(--tertiary-color) !important;
 }
 
-.table>:not(caption)>*>* {
+.table-patient>:not(caption)>*>* {
     background-color: #EDF2FB;
 }
 
@@ -63,12 +72,24 @@ header, .navbar-mobile {
     border-radius: 5px 0 0 5px;
 }
 
-.table-striped>tbody>tr>td:nth-child(11) {
+.table-striped>tbody>tr>td:nth-child(11), .table-striped>tbody>tr>td:nth-child(6) {
     border-radius:  0 5px 5px 0;
 }
 
 .bi-pencil-square, .bi-trash {
     cursor: pointer;
+}
+
+/* CALCULATIONS */
+.calculations-table>:not(caption) {
+    background-color: var(--white-color) !important;
+}
+.calculations-table >tbody>tr:nth-of-type(odd)>* {
+    background-color: #ADD7EE;
+}
+
+.calculations-table >tbody>tr:nth-of-type(even)>* {
+    background-color: #82BECA;
 }
 
 /* FORM LOGIN */
