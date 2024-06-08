@@ -30,19 +30,37 @@ export const Search = ({ name, type, placeholder, ariaLabel }) => { // onChange 
   );
 };
 
-export const InputRadio = ({ label, name, type, defaultValue}) => {
+
+export const InputRadio = ({ id, name, label, defaultValue}) => {
   return (
-    <div className="mb-3">
-      <label htmlFor={`${name}-${defaultValue}`} className="form-check-label me-3">
+    <div className="form-check mb-3">
+      <label htmlFor={id} className="form-check-label me-3">
         {label}
       </label>
           <input
-            type={type}
-            id={`${name}-${defaultValue}`}
+            type="radio"
+            id={id}
             name={name}
             defaultValue={defaultValue}
             className="form-check-input"
           />
     </div>
+  );
+};
+
+export const InputCheckbox = ({ id, label, name, defaultValue, bgColor}) => {
+  return (
+    <div className="form-check mb-3">
+      <label className="form-check-label fw-bold" htmlFor={id}>
+       <span className="rounded-5 p-1 text-white fw-bold" style={{backgroundColor: bgColor}}> {label}</span>
+      </label>
+          <input
+            type="checkbox"
+            id={id}
+            name={name}
+            defaultValue={defaultValue}
+            className="form-check-input"
+          />
+</div>
   );
 };

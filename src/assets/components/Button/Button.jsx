@@ -1,6 +1,6 @@
-const Button = ({ title, type, bg_color }) => {
+const Button = ({ title, type, bgColor, textColor, textTransform, rounded, icon }) => {
     return ( 
-        <button type={ type } className="btn rounded-3 text-uppercase py-2 px-4 border-0 text-white" style={{ backgroundColor: bg_color }}>{ title }</button>
+        <button type={ type } className="btn py-2 px-4 border-0 fw-bold" style={{ backgroundColor: bgColor, color: textColor, textTransform: textTransform, borderRadius: rounded }}>{ title } <img src={icon} alt="" /></button>
     )
 }
 

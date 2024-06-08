@@ -39,19 +39,8 @@ const ModalEditPatient = () => {
                         <div className="mb-3">
                             <label className="mb-0">Sex<span className="text-danger">*</span></label>
                                 <div className="d-flex justify-content-evenly">
-                                    <InputRadio 
-                                    label="Female"
-                                    name="sex"
-                                    value="female"
-                                    type="radio"
-                                />
-
-                                <InputRadio 
-                                    label="Male"
-                                    name="sex"
-                                    value="male"
-                                    type="radio"
-                                />
+                                    <InputRadio id="female" name="sex" value="female" label="Female" />
+                                    <InputRadio id="male" name="sex" value="male" label="Male" />
                                 </div>
                         </div>
 
@@ -73,7 +62,7 @@ const ModalEditPatient = () => {
                         </BaseForm>
                     </div>
                     <div className="modal-footer border-0 d-flex justify-content-evenly">
-                        <Button type="submit" title="Update" bg_color="#3DC2DD" />
+                        <Button type="submit" title="Update" bgColor="#3DC2DD" />
                     </div>
                     </div>
                 </div>

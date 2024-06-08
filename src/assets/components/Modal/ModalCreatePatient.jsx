@@ -36,19 +36,8 @@ const ModalCreatePatient = () => {
                         <div className="mb-3">
                             <label className="mb-0">Sex<span className="text-danger">*</span></label>
                                 <div className="d-flex justify-content-evenly">
-                                    <InputRadio 
-                                    label="Female"
-                                    name="sex"
-                                    value="female"
-                                    type="radio"
-                                />
-
-                                <InputRadio 
-                                    label="Male"
-                                    name="sex"
-                                    value="male"
-                                    type="radio"
-                                />
+                                    <InputRadio id="female" name="sex" value="female" label="Female" />
+                                    <InputRadio id="male" name="sex" value="male" label="Male" />
                                 </div>
                         </div>
 
@@ -69,7 +58,7 @@ const ModalCreatePatient = () => {
                         />
 
                         <div className="modal-footer border-0 d-flex justify-content-center">
-                            <Button type="submit" title="Submit" bg_color="#3DC2DD" />
+                            <Button type="submit" title="Submit" bgColor="#3DC2DD" />
                         </div>
                     </BaseForm>
                 </div>
