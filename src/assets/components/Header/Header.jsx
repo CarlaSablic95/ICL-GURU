@@ -7,7 +7,6 @@ const Header = () => {
                 <p className='text-white mx-5'>User:</p>
                 <div className="bg-warning mx-5">Logo</div>
             </header>
-
             <Sidebar />
         </>
     )
