@@ -59,7 +59,7 @@ export const InputCheckbox = ({ id, label, name, defaultValue, bgColor}) => {
             id={id}
             name={name}
             defaultValue={defaultValue}
-            className="form-check-input"
+            className="form-check-input pe-0"
           />
 </div>
   );
