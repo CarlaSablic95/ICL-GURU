@@ -1,4 +1,4 @@
-import PatientsList from "../components/Table/PatientsList";
+import PatientsTable from "../components/Table/PatientsTable";
 import ModalCreatePatient from "../components/Modal/ModalCreatePatient";
 import ModalEditPatient from "../components/Modal/ModalEditPatient";
 import ModalDeletePatient from "../components/Modal/ModalDeletePatient";
@@ -12,7 +12,7 @@ const Patients = () => {
         <SearchForm />
       </div>
       {/* Tabla de pacientes */}
-      <PatientsList />
+      <PatientsTable />
 
       {/* Modales con 2 formularios para crear y editar pacientes. */}
       <ModalCreatePatient />

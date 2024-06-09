@@ -1,5 +1,6 @@
 import Edit from "/icons/edit-1.svg";
 import Delete from "/icons/delete.svg";
+import Eyes from "../Eyes/Eyes";
 
 const CalculationDataTable = () => {
     return (
@@ -20,7 +21,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">
-              <span className="rounded-5 p-1 text-white fw-bold" style={{ backgroundColor:"#4888C8" }}>OD</span>
+              <Eyes bgColor="#4888C8" color="#fefefe" title="OD" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">
@@ -35,7 +36,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">
-              <span className="rounded-5 p-1 text-white fw-bold" style={{ backgroundColor: "#2FB297" }}>OS</span>
+                <Eyes bgColor="#2FB297" color="#fefefe" title="OS" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">
@@ -66,7 +67,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">June 11,2024</td>
               <td className="align-middle"></td>
               <td className="align-middle">
-              <span className="rounded-5 p-1 text-dark fw-bold" style={{ backgroundColor: "#8F8F8F" }}>OD</span>
+                <Eyes bgColor="#8F8F8F" color="#212529" title="OD" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">
@@ -81,7 +82,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">June 11,2024</td>
               <td className="align-middle"></td>
               <td className="align-middle">
-              <span className="rounded-5 p-1 text-dark fw-bold" style={{ backgroundColor: "#8F8F8F" }}>OS</span>
+              <Eyes bgColor="#8F8F8F" color="#212529" title="OS" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">

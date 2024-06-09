@@ -1,5 +1,6 @@
-import CalculationTable from "../components/CalculationTable/CalculationTable";
-import CalculationDataPatient from "../components/CalculationDataPatient/CalculationDataPatient";
+import CalculationTable from "../components/CalculationsPatient/CalculationTable";
+import CalculationDataPatient from "../components/CalculationsPatient/CalculationDataPatient";
+import CalculationResult from "../components/CalculationsPatient/CalculationResult";
 
 const Calculations = () => {
     
@@ -7,6 +8,7 @@ const Calculations = () => {
         <>
             <CalculationTable />
             <CalculationDataPatient />
+            <CalculationResult />
         </>
     )
 }
