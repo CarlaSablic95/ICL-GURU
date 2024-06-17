@@ -27,6 +27,7 @@ const PatientsTable = () => {
         console.log("DATOS DE PACIENTES: ", dataPatient)
         
         setDataPatient(dataPatient);
+        setFilteredPatients(dataPatient);
       } catch (error) {
         setError(error);
       } finally {
@@ -47,34 +48,16 @@ const filterPatients = (event) => {
   setSearchPatient(filterValue);
 
   // Variable que almacena el resultado del filtrado
-  // const filteredData = dataPatient.filter((patient) => {
-  //     const patientName = patient.name.toLowerCase();
-  //     const patientLastname = patient.lastname.toLowerCase();
-  //     patientName.includes(searchPatient) || patientLastname.includes(searchPatient);
-  // });
+  const filteredData = dataPatient.filter((patient) => {
+      const patientName = patient.name.toLowerCase();
+      const patientLastname = patient.lastname.toLowerCase();
+      return patientName.includes(filterValue) || patientLastname.includes(filterValue);
+  });
 
-  // setFilteredPatients(filteredData);
+  setFilteredPatients(filteredData);
 }
 
   return (
-
-    /* STATUS
-              <td className="align-middle">
-                <div className="status-indicator border border-black rounded-circle complete-status mx-auto"></div>
-              </td>
-
-              <td className="align-middle">
-                <div className="status-indicator border border-black blink rounded-circle missing-data mx-auto"></div>
-              </td>
-              <td className="align-middle">
-                <div className="status-indicator border border-black rounded-circle no-data-loading mx-auto"></div>
-              </td>
-
-              <td className="align-middle">
-                <div className="status-indicator border border-black rounded-circle half-completed mx-auto"></div>
-              </td> */
-
-    // TABLA CON DATOS TRAÍDOS DE UNA API
     <section>
         <h1 className="mb-4 text-center text-uppercase pt-2">Patients</h1>
       <div className="row pb-4 mb-4">
@@ -106,8 +89,8 @@ const filterPatients = (event) => {
                 </thead>
 
                 <tbody className="align-middle">
-                  {/* Sin filtro aplicado, muestra todos los pacientes de "dataPatient" */}
-                {!searchPatient && dataPatient.map((patient) => (
+                  {/* Muestra los pacientes filtrados si hay una búsqueda activa, sino muestra todos los pacientes */}
+                  {filteredPatients.map((patient) => (
                       <tr className="text-center" key={ patient.id}>
                         <td className="text-center">{ patient.lastname }</td>
                         <td className="text-center">{ patient.name }</td>
@@ -128,14 +111,8 @@ const filterPatients = (event) => {
                           <img src={ Delete } style={{ width: "22px", cursor:"pointer"}}  data-bs-toggle="modal" data-bs-target="#modalDelete"/>
                         </td>
                       </tr>))
-                }
-
+                  }
                 </tbody>
-                { searchPatient && dataPatient.filter((patient) => {
-      const patientName = patient.name.toLowerCase();
-      const patientLastname = patient.lastname.toLowerCase();
-      patientName.includes(searchPatient) || patientLastname.includes(searchPatient);
-  }) }
               </table>
              </div>
         </div>
