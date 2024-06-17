@@ -158,7 +158,7 @@ const PatientsTable = () => {
                   </tr>
               </thead>
 
-                <tbody>
+                <tbody className="align-middle">
                 { dataPatient.map((patient) => (
                 <tr className="text-center" key={ patient.id}>
                         <td className="text-center">{ patient.lastname }</td>
