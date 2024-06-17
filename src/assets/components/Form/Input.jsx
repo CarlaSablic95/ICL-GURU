@@ -17,20 +17,6 @@ export const Input = ({ label, name, type, placeholder, defaultValue }) => { // 
   );
 };
 
-export const Search = ({ name, type, placeholder, ariaLabel }) => { // onChange // Faltaria value
-  return (
-      <input
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        className="form-control me-2 rounded-5 border-2 border-dark shadow-sm"
-        style={{ width: "60%", backgroundColor: "#D7E3FC" }}
-        aria-label={ariaLabel}
-      />
-  );
-};
-
-
 export const InputRadio = ({ id, name, label, defaultValue}) => {
   return (
     <div className="form-check mb-3">
