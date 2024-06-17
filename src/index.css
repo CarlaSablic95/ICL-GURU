@@ -78,7 +78,7 @@ header, .navbar-mobile {
     border-radius: 5px 0 0 5px;
 }
 
-.table-striped>tbody>tr>td:nth-child(11), .table-striped>tbody>tr>td:nth-child(6) {
+.table-striped>tbody>tr>td:nth-child(11), .calculations-table>tbody>tr>td:nth-child(6) {
     border-radius:  0 5px 5px 0;
 }
 
