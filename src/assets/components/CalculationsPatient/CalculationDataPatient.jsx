@@ -5,16 +5,17 @@ import Eye from "../Eyes/Eye";
 
 const CalculationDataPatient = () => {
     return (
-        <div className="col-10 p-5">
+        <div className="col-10 pt-5 px-3 px-md-5">
             <h2>ESTE COMPONENTE SE MUESTRA CUANDO HACES CLICK EN LOS RESULTADOS DE LA TABLA CALCULATIONS</h2>
             <a href="/calculations" className="text-decoration-none">
-                <img src={ Return } alt="ícono de flecha de retroceso" style={{ width:"35px" }}/><span className="text-uppercase" style={{color: "#666666"}}>Return</span>
+                <img src={ Return } alt="ícono de flecha de retroceso" style={{ width:"30px" }}/><span className="text-uppercase" style={{color: "#666666"}}>Return</span>
             </a>
             <div className="d-flex flex-column flex-md-row justify-content-evenly align-items-center mb-5 gap-3">
                 <h1 className="text-center text-uppercase">Icl Calculations</h1>
+                <div className="d-flex flex-row justify-content-center align-items-center gap-3">
                     <a href="#" className="p-2 px-3 text-decoration-none" style={{backgroundColor:"#B02F92", color:"#fefefe", borderRadius:"2rem"}}>Follow up</a>
                 <Button title="Download report" bgColor="#3DC2DD" textColor="#1A2A2F"  rounded="2rem" icon="./icons/file_download.svg" />
-
+                </div>
                 <form>
                         <div className="mb-3">
                                     <p className="fw-bold text-center">Eye</p>
@@ -26,7 +27,7 @@ const CalculationDataPatient = () => {
                     </form>
             </div>
         
-            <div className="p-md-5">
+            <div className="ps-4 py-4">
             <div className="mb-5 ps-3">
                 <h5 className="mb-1">Patient:</h5>
                 <h5 className="text-uppercase mb-1">Id:</h5>

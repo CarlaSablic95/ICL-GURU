@@ -9,7 +9,7 @@ const CalculationResult = () => {
     return (
         <>
             <CalculationDataPatient />
-            <div className="col-10 py-5">
+            <div className="col-10 pt-5 px-3 px-md-5">
                 <div className="row justify-content-evenly">
                     <div className="col-10 col-md-5 d-flex flex-column justify-content-center align-items-center">
                         <Eye bgColor="#4888C8" color="#fefefe" title="OD" width="50px" height="50px" fontSize="1.5rem" />

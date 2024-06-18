@@ -36,7 +36,7 @@ export const InputRadio = ({ id, name, label, defaultValue}) => {
 
 export const InputCheckbox = ({ id, label, name, defaultValue, bgColor}) => {
   return (
-    <div className="form-check mb-3">
+    <div className="form-check">
       <label className="form-check-label fw-bold" htmlFor={id}>
        <span className="rounded-5 p-1 text-white fw-bold" style={{backgroundColor: bgColor}}> {label}</span>
       </label>
