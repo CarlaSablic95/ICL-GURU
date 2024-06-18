@@ -32,8 +32,22 @@ body {
 
 /* MENÚ VERSIÓN DESKTOP/MOBILE */
 
-header, .navbar-mobile {
+header, .navbar-mobile, .patient-name {
     background-color: var(--secondary-color);
+}
+
+.patient-name {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.patient-name.show {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+
+aside {
+    min-height: 100vh;
 }
 
 .offcanvas.offcanvas-end {
@@ -195,7 +209,7 @@ header, .navbar-mobile {
 /* FORM ADD PATIENT */
 .form-check .form-check-input {
     float: right;
-    margin-left: 1.5em;
+    margin-left: 0.5em;
 }
 
 /* STATUS INDICATOR */

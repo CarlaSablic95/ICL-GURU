@@ -30,7 +30,7 @@ const routes = [
 
 const Sidebar = () => {
   return (
-    <aside className="col-2 shadow vh-100 d-none d-lg-flex flex-column justify-content-start align-items-center">
+    <aside className="col-2 shadow d-none d-lg-flex flex-column justify-content-start align-items-center">
       <ul className="list-unstyled">
         <li className="mb-3">
           <a
@@ -67,6 +67,7 @@ const Sidebar = () => {
         </li>
       </ul>
     </aside>
+    
   );
 };
 

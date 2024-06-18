@@ -22,6 +22,7 @@ const PatientsTable = () => {
       try {
         const response = await fetch(URL);
         console.log("RESPONSE: ", response)
+       
 
         const dataPatient = await response.json();
         console.log("DATOS DE PACIENTES: ", dataPatient)
@@ -43,6 +44,7 @@ const PatientsTable = () => {
 // FILTRO DE PACIENTES
 const filterPatients = (event) => {
   const filterValue = event.target.value.toLowerCase();
+  console.info("VALOR INGRESADO: ", filterValue)
 
   // Se actualiza la variable de estado "searchPatient" con el valor filtrado
   setSearchPatient(filterValue);
@@ -58,13 +60,31 @@ const filterPatients = (event) => {
 }
 
   return (
+
+    /* STATUS
+              <td className="align-middle">
+                <div className="status-indicator border border-black rounded-circle complete-status mx-auto"></div>
+              </td>
+
+              <td className="align-middle">
+                <div className="status-indicator border border-black blink rounded-circle missing-data mx-auto"></div>
+              </td>
+              <td className="align-middle">
+                <div className="status-indicator border border-black rounded-circle no-data-loading mx-auto"></div>
+              </td>
+
+              <td className="align-middle">
+                <div className="status-indicator border border-black rounded-circle half-completed mx-auto"></div>
+              </td> */
     <section>
+      <div className="row py-4 mb-2">
         <h1 className="mb-4 text-center text-uppercase pt-2">Patients</h1>
-      <div className="row pb-4 mb-4">
-       <form className="d-flex justify-content-end" role="search">
+       <form className="d-flex justify-content-center" role="search">
             <input className="form-control me-2 rounded-5 border-2 border-dark shadow-sm" style={{ width: "60%", backgroundColor: "#D7E3FC" }} type="search" placeholder="Find patients by name or surname" aria-label="Search" onChange={filterPatients} />
-            <ButtonModal dataBsTarget="#modalForm" title="Add patients" icon="./icons/add-user.svg" />
         </form>
+      </div>
+      <div className="mb-4 d-flex justify-content-end">
+        <ButtonModal dataBsTarget="#modalForm" title="Add patients" icon="./icons/add-user.svg" />
       </div>
       { (error) ? (<p className="text-danger text-center">Error al cargar los datos...</p> ) :
       

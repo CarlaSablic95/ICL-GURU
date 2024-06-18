@@ -1,6 +1,6 @@
 import Edit from "/icons/edit-1.svg";
 import Delete from "/icons/delete.svg";
-import Eyes from "../Eyes/Eyes";
+import Eye from "../Eyes/Eye";
 
 const CalculationDataTable = () => {
     return (
@@ -21,7 +21,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">
-              <Eyes bgColor="#4888C8" color="#fefefe" title="OD" />
+              <Eye bgColor="#4888C8" color="#fefefe" title="OD" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">
@@ -36,7 +36,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">February 21,2024</td>
               <td className="align-middle">
-                <Eyes bgColor="#2FB297" color="#fefefe" title="OS" />
+                <Eye bgColor="#2FB297" color="#fefefe" title="OS" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">
@@ -67,7 +67,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">June 11,2024</td>
               <td className="align-middle"></td>
               <td className="align-middle">
-                <Eyes bgColor="#8F8F8F" color="#212529" title="OD" />
+                <Eye bgColor="#8F8F8F" color="#212529" title="OD" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">
@@ -82,7 +82,7 @@ const CalculationDataTable = () => {
               <td className="align-middle">June 11,2024</td>
               <td className="align-middle"></td>
               <td className="align-middle">
-              <Eyes bgColor="#8F8F8F" color="#212529" title="OS" />
+              <Eye bgColor="#8F8F8F" color="#212529" title="OS" />
               </td>
               <td className="align-middle">ZV1</td>
               <td className="align-middle">
@@ -92,8 +92,6 @@ const CalculationDataTable = () => {
                 <img src={ Delete } style={{ width: "22px", cursor:"pointer"}}data-bs-toggle="modal" data-bs-target="#modalDelete"/>
               </td>
             </tr>
-
-          
           </tbody>
         </table>
         </div>
