@@ -123,12 +123,12 @@ aside {
 .card {
     background-color: #E9F1F8;
     box-shadow: 4px 4px 4px 0px #00507C82;
-    width: 350px;
+    width: 280px;
     padding: 10px;
 }
 
 .card-surgical-data {
-    height: 150px
+    height: 180px
 }
 
 /* FORM LOGIN */

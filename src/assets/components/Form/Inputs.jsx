@@ -34,7 +34,7 @@ export const InputRadio = ({ id, name, label, defaultValue}) => {
   );
 };
 
-export const InputCheckbox = ({ id, label, name, defaultValue, bgColor}) => {
+export const InputCheckbox = ({ id, label, name, defaultValue, bgColor, onChange}) => {
   return (
     <div className="form-check">
       <label className="form-check-label fw-bold" htmlFor={id}>
@@ -46,6 +46,8 @@ export const InputCheckbox = ({ id, label, name, defaultValue, bgColor}) => {
             name={name}
             defaultValue={defaultValue}
             className="form-check-input pe-0"
+            onChange={onChange}
+            style={{ cursor: "pointer" }}
           />
 </div>
   );

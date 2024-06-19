@@ -1,5 +1,5 @@
-import CalculationTable from "../components/CalculationsPatient/CalculationTable";
-import CalculationResult from "../components/CalculationsPatient/CalculationResult";
+// import CalculationTable from "../components/CalculationsPatient/CalculationTable";
+import CalculationDataPatient from "../components/CalculationsPatient/CalculationDataPatient";
 import { useState, useEffect } from "react";
 
 const Calculations = () => {
@@ -20,8 +20,8 @@ const Calculations = () => {
         <div className={`patient-name fixed-top py-2 ${showNameOnScroll ? "show": ""}`}>
                 <p className="text-white text-center mb-0">User: Nombre y Apellido</p>
             </div>
-            <CalculationTable />
-            <CalculationResult />
+            {/* <CalculationTable /> */}
+            <CalculationDataPatient />
         </>
     )
 }

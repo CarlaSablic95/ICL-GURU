@@ -1,10 +1,30 @@
+import { useState } from "react";
 import { InputCheckbox } from "../Form/Inputs";
 import Button from "../Button/Button";
 import Return from "/icons/arrow-back.png";
+import graphicOd from "/icons/graphic-od.png";
+import graphicOs from "/icons/graphic-os.png";
 import Eye from "../Eyes/Eye";
+import SurgicalData from "../Card/SurgicalData";
+import AnatomicData from "../Card/AnatomicData";
+import RightEyeResult from "../Table/RightEyeResult";
+import LeftEyeResult from "../Table/LeftEyeResult";
+
 
 const CalculationDataPatient = () => {
+    const [showOD, setShowOD] = useState(true);
+    const [showOS, setShowOS] = useState(true);
+
+    const handleShowOD = (e) => {
+        setShowOD(e.target.checked);
+    }
+
+    const handleShowOS = (e) => {
+        setShowOS(e.target.checked);
+    }
+
     return (
+        <>
         <div className="col-10 pt-5 px-3 px-md-5">
             <h2>ESTE COMPONENTE SE MUESTRA CUANDO HACES CLICK EN LOS RESULTADOS DE LA TABLA CALCULATIONS</h2>
             <a href="/calculations" className="text-decoration-none">
@@ -20,27 +40,69 @@ const CalculationDataPatient = () => {
                         <div className="mb-3">
                                     <p className="fw-bold text-center">Eye</p>
                                 <div className="d-flex justify-content-center">
-                                    <InputCheckbox label="OD" name="eye" id="od" value="od" bgColor="rgb(72, 136, 200)" />
-                                    <InputCheckbox label="OS" name="eye" id="os" value="os" bgColor="rgb(47, 178, 151)" />
+                                    <InputCheckbox label="OD" name="eye" id="od" value="od" bgColor="rgb(72, 136, 200)" onChange={handleShowOD} />
+                                    <InputCheckbox label="OS" name="eye" id="os" value="os" bgColor="rgb(47, 178, 151)" onChange={handleShowOS} />
                                 </div>
                         </div>
                     </form>
             </div>
         
-            <div className="ps-4 py-4">
-            <div className="mb-5 ps-3">
-                <h5 className="mb-1">Patient:</h5>
-                <h5 className="text-uppercase mb-1">Id:</h5>
-                <h5 className="text-uppercase mb-1">Dob:</h5>
-                <h5 className="text-uppercase mb-1">Mrn:</h5>
-                <h5 className="mb-1">Method:</h5>
+            <section className="ps-4 py-4">
+                <div className="mb-5 ps-3">
+                    <h5 className="mb-1">Patient:</h5>
+                    <h5 className="text-uppercase mb-1">Id:</h5>
+                    <h5 className="text-uppercase mb-1">Dob:</h5>
+                    <h5 className="text-uppercase mb-1">Mrn:</h5>
+                    <h5 className="mb-1">Method:</h5>
+                </div>
+            <div className="d-flex flex-column flex-md-row justify-content-evenly">
+                {showOD && (<div className="d-flex flex-column justify-content-center">
+                    <div className="text-center mb-4">
+                        <Eye bgColor="#4888C8" color="#fefefe" title="OD" width="50px" height="50px" fontSize="1.5rem" />
+                    </div>
+                    <div className="mb-5">
+                        <img src={ graphicOd } alt="" className="img-fluid" />
+                    </div>
+                </div>)}
+
+                {showOS && (
+                    <div className="d-flex flex-column justify-content-center">
+                        <div className="text-center mb-4">
+                            <Eye bgColor="#2FB297" color="#fefefe" title="OS" width="50px" height="50px" fontSize="1.5rem" />
+                        </div>
+                        <div className="mb-5">
+                            <img src={ graphicOs } alt="" className="img-fluid" />
+                        </div>
+                </div>
+            )}
+                </div>
+            </section>
+            
+                <section className="row flex-column flex-md-row justify-content-evenly">
+                  { showOD && (<div className="col-10 col-md-6">
+                    <div className="text-center mb-4">
+                        <Eye bgColor="#4888C8" color="#fefefe" title="OD" width="50px" height="50px" fontSize="1.5rem" />
+                    </div>
+                        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-evenly mb-3">
+                            <SurgicalData  IntraocularLensPower="-10D/2.5D/90°" DataOfSurgery=""/>
+                            <AnatomicData  AtA="12.138" ARise="0.078" ACD="3.489" WtW="12.000" />
+                        </div>
+                        <RightEyeResult />
+                    </div>)}
+
+                    { showOS && (<div className="col-10 col-md-6 d-flex flex-column">
+                        <div className="text-center mb-4">
+                            <Eye bgColor="#2FB297" color="#fefefe" title="OS" width="50px" height="50px" fontSize="1.5rem" />
+                        </div>
+                        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-evenly mb-3">
+                            <SurgicalData  IntraocularLensPower="-10D" DataOfSurgery=""/>
+                            <AnatomicData  AtA="12.131" ARise="0.022" ACD="3.597" WtW="12.100" />
+                            </div>
+                        <LeftEyeResult />
+                    </div>)}
+                </section>
             </div>
-            <div className="d-flex justify-content-evenly">
-                <Eye bgColor="#4888C8" color="#fefefe" title="OD" width="50px" height="50px" fontSize="1.5rem" />
-                <Eye bgColor="#2FB297" color="#fefefe" title="OS" width="50px" height="50px" fontSize="1.5rem" />
-            </div>
-            </div>
-            </div>
+        </>
     )
 }
 
