@@ -100,7 +100,13 @@ const CalculationDataPatient = () => {
                             </div>
                         <LeftEyeResult />
                     </div>)}
+                {(!showOD && !showOS) && (
+                <div className="text-center mt-5">
+                <h3>No eye data selected</h3>
+                </div>
+                )}
                 </section>
+
             </div>
         </>
     )
