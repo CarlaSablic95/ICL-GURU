@@ -78,8 +78,8 @@ const CalculationDataPatient = () => {
                 </div>
             </section>
             
-                <section className="row flex-column flex-md-row justify-content-evenly">
-                  { showOD && (<div className="col-10 col-md-6">
+                <section className="row flex-column flex-md-row ustify-content-center justify-content-md-evenly">
+                  { showOD && (<div className="col-12 col-md-6">
                     <div className="text-center mb-4">
                         <Eye bgColor="#4888C8" color="#fefefe" title="OD" width="50px" height="50px" fontSize="1.5rem" />
                     </div>
@@ -90,7 +90,7 @@ const CalculationDataPatient = () => {
                         <RightEyeResult />
                     </div>)}
 
-                    { showOS && (<div className="col-10 col-md-6 d-flex flex-column">
+                    { showOS && (<div className="col-12 col-md-6 d-flex flex-column">
                         <div className="text-center mb-4">
                             <Eye bgColor="#2FB297" color="#fefefe" title="OS" width="50px" height="50px" fontSize="1.5rem" />
                         </div>
@@ -101,9 +101,9 @@ const CalculationDataPatient = () => {
                         <LeftEyeResult />
                     </div>)}
                 {(!showOD && !showOS) && (
-                <div className="text-center mt-5">
-                <h3>No eye data selected</h3>
-                </div>
+                    <div className="text-center mt-5">
+                        <h3>No eye data selected</h3>
+                    </div>
                 )}
                 </section>
 

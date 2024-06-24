@@ -1,5 +1,6 @@
 // import CalculationTable from "../components/CalculationsPatient/CalculationTable";
-import CalculationDataPatient from "../components/CalculationsPatient/CalculationDataPatient";
+// import CalculationDataPatient from "../components/CalculationsPatient/CalculationDataPatient";
+import FollowUp from "../components/CalculationsPatient/FollowUp";
 import { useState, useEffect } from "react";
 
 const Calculations = () => {
@@ -21,7 +22,8 @@ const Calculations = () => {
                 <p className="text-white text-center mb-0">User: Nombre y Apellido</p>
             </div>
             {/* <CalculationTable /> */}
-            <CalculationDataPatient />
+            {/* <CalculationDataPatient /> */}
+            <FollowUp />
         </>
     )
 }
