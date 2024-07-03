@@ -159,6 +159,17 @@ aside {
     align-items: center;
 }
 
+.rs-btn-default {
+    background-color: var(--secondary-color) !important;
+    color: var(--white-color) !important;
+    border-radius: .5rem !important;
+}
+
+.rs-btn-disabled {
+    background-color: #869ba6 !important;
+    color: var(--white-color) !important;
+}
+
 .rs-btn-group {
     position: relative;
     vertical-align: middle;
