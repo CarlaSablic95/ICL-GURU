@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "rsuite/dist/rsuite.css";
 
 /* PALETA DE COLORES */
 :root {
@@ -151,6 +152,48 @@ aside {
     width: 50%;
 }
 
+/* STEP REACT SUITE */
+.rs-scroll-view.rs-scroll-view-custom-scrollbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rs-btn-group {
+    position: relative;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* SPLIDE */
+.is-active {
+        background-color: 2px solid #495AFF !important;
+        color: var(--white-color);
+}
+
+/* FORMS (FOLLOW UP) */
+span.input-group-text  {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background: white;
+    border-left-color: transparent;
+}
+
+input[type="text"], input[type="number"] {
+    border-right-color: transparent;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.input-date {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+/* input:focus {
+    border-color: transparent !important;
+} */
 
 /* FORM LOGIN */
 .bg-login {
