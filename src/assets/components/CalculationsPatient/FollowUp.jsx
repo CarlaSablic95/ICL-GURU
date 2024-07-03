@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InputCheckbox } from "../Form/Inputs";
 import Return from "/icons/arrow-back.png";
-import FormWizardComponent from "../FormWizardComponent/FormWizardComponent";
+import WizardComponent from "../WizardComponent/WizardComponent";
 
 const FollowUp = () => {
     //  Para mostrar el cálculo de ambos ojos
@@ -15,8 +15,6 @@ const FollowUp = () => {
     const handleShowOS = (e) => {
         setShowOS(e.target.checked);
     }
-
-
 
     return(
         <div className="col-10 pt-5 px-3 px-md-5">
@@ -48,7 +46,7 @@ const FollowUp = () => {
             </div>
 
             {/* FORM WIZARD */}
-           <FormWizardComponent />
+           <WizardComponent />
         </div>
         
     )
