@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InputCheckbox } from "../Form/Inputs";
 import Return from "/icons/arrow-back.png";
-import WizardComponent from "../FollowUpForms/";
+import WizardComponent from "../WizardComponent/WizardComponent";
 
 const FollowUp = () => {
     //  Para mostrar el cálculo de ambos ojos
