@@ -18,7 +18,7 @@ const PatientsTable = () => {
 
   // CONSUMO DE APIS DE PACIENTES
   const fetchData = async () => {
-    const URL = "https://retoolapi.dev/O9fFA6/patients";
+    const URL = "https://test.iclguru.com/patients/patients/";
       try {
         const response = await fetch(URL);
         console.log("RESPONSE: ", response)
@@ -52,8 +52,8 @@ const filterPatients = (event) => {
   // Variable que almacena el resultado del filtrado
   const filteredData = dataPatient.filter((patient) => {
       const patientName = patient.name.toLowerCase();
-      const patientLastname = patient.lastname.toLowerCase();
-      return patientName.includes(filterValue) || patientLastname.includes(filterValue);
+      const patientSurname = patient.Surname.toLowerCase();
+      return patientName.includes(filterValue) || patientSurname.includes(filterValue);
   });
 
   setFilteredPatients(filteredData);
@@ -94,7 +94,7 @@ const filterPatients = (event) => {
               <table className="table table-striped table-patient">
                 <thead>
                   <tr className="text-center border-bottom border-black">
-                    <th scope="col" className="align-middle">Lastname</th>
+                    <th scope="col" className="align-middle">Surname</th>
                     <th scope="col" className="align-middle">Name</th>
                     <th scope="col" className="align-middle">Age</th>
                     <th scope="col" className="align-middle">Sex</th>
@@ -112,7 +112,7 @@ const filterPatients = (event) => {
                   {/* Muestra los pacientes filtrados si hay una búsqueda activa, sino muestra todos los pacientes */}
                   {filteredPatients.map((patient) => (
                       <tr className="text-center" key={ patient.id}>
-                        <td className="text-center">{ patient.lastname }</td>
+                        <td className="text-center">{ patient.surname }</td>
                         <td className="text-center">{ patient.name }</td>
                         <td className="text-center">{ patient.age }</td>
                         <td className="text-center">{ patient.sex }</td>
