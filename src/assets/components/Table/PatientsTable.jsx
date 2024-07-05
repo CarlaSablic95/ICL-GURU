@@ -90,6 +90,7 @@ const filterPatients = (event) => {
       
       (loading) ? (<h4 className="text-center">Cargando..</h4>) : (
        <div className="table-responsive mb-4" style={{ backgroundColor:"#EDF2FB" }}>
+             <div className="table-responsive" style={{ backgroundColor:"#EDF2FB" }}>
               <table className="table table-striped table-patient">
                 <thead>
                   <tr className="text-center border-bottom border-black">
@@ -114,7 +115,7 @@ const filterPatients = (event) => {
                         <td className="text-center">{ patient.name }</td>
                         <td className="text-center">{ patient.sex }</td>
                         <td className="text-center">{ patient.dob }</td>
-                        <td className="text-center">{ patient.id }</td>
+                        <td className="text-center">{ patient.identification }</td>
                         <td className="text-center">{ patient.medical_record }</td>
                         <td className="text-center">{ patient.organization }</td>
                         {/* <td className="align-middle">{ patient.followup }</td> */}
@@ -131,7 +132,7 @@ const filterPatients = (event) => {
                   }
                 </tbody>
               </table>
-             
+             </div>
         </div>
       )}
       </section>
