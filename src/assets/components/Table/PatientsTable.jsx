@@ -16,7 +16,7 @@ const PatientsTable = () => {
   const [error, setError] = useState(null);
 
 
-  // CONSUMO DE APIS DE PACIENTES
+  // CONSUMO DE API DE PACIENTES
   const fetchData = async () => {
     const URL = "https://test.iclguru.com/patients/patients/";
       try {
@@ -24,11 +24,11 @@ const PatientsTable = () => {
         console.log("RESPONSE: ", response)
        
 
-        const dataPatient = await response.json();
-        console.log("DATOS DE PACIENTES: ", dataPatient)
+        const fetchDataPatient = await response.json();
+        console.log("DATOS DE PACIENTES: ", fetchDataPatient)
         
-        setDataPatient(dataPatient);
-        setFilteredPatients(dataPatient);
+        setDataPatient(fetchDataPatient);
+        setFilteredPatients(fetchDataPatient);
       } catch (error) {
         setError(error);
       } finally {
@@ -52,7 +52,7 @@ const filterPatients = (event) => {
   // Variable que almacena el resultado del filtrado
   const filteredData = dataPatient.filter((patient) => {
       const patientName = patient.name.toLowerCase();
-      const patientSurname = patient.Surname.toLowerCase();
+      const patientSurname = patient.surname.toLowerCase();
       return patientName.includes(filterValue) || patientSurname.includes(filterValue);
   });
 
@@ -86,17 +86,15 @@ const filterPatients = (event) => {
       <div className="mb-4 d-flex justify-content-end">
         <ButtonModal dataBsTarget="#modalForm" title="Add patients" icon="./icons/add-user.svg" />
       </div>
-      { (error) ? (<p className="text-danger text-center">Error al cargar los datos...</p> ) :
+      { (error) ? (<h4 className="text-danger text-center">Error al cargar los datos...</h4> ) :
       
       (loading) ? (<h4 className="text-center">Cargando..</h4>) : (
        <div className="table-responsive mb-4" style={{ backgroundColor:"#EDF2FB" }}>
-             <div className="table-responsive" style={{ backgroundColor:"#EDF2FB" }}>
               <table className="table table-striped table-patient">
                 <thead>
                   <tr className="text-center border-bottom border-black">
-                    <th scope="col" className="align-middle">Surname</th>
+                    <th scope="col" className="align-middle">Lastname</th>
                     <th scope="col" className="align-middle">Name</th>
-                    <th scope="col" className="align-middle">Age</th>
                     <th scope="col" className="align-middle">Sex</th>
                     <th scope="col" className="align-middle">DOB</th>
                     <th scope="col" className="align-middle patient-id">Patient ID</th>
@@ -114,11 +112,10 @@ const filterPatients = (event) => {
                       <tr className="text-center" key={ patient.id}>
                         <td className="text-center">{ patient.surname }</td>
                         <td className="text-center">{ patient.name }</td>
-                        <td className="text-center">{ patient.age }</td>
                         <td className="text-center">{ patient.sex }</td>
                         <td className="text-center">{ patient.dob }</td>
                         <td className="text-center">{ patient.id }</td>
-                        <td className="text-center">{ patient.mrn }</td>
+                        <td className="text-center">{ patient.medical_record }</td>
                         <td className="text-center">{ patient.organization }</td>
                         {/* <td className="align-middle">{ patient.followup }</td> */}
                         <td className="align-middle">
@@ -134,7 +131,7 @@ const filterPatients = (event) => {
                   }
                 </tbody>
               </table>
-             </div>
+             
         </div>
       )}
       </section>

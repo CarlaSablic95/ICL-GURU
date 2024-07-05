@@ -5,6 +5,34 @@ import { useState, useEffect } from "react";
 
 const Calculations = () => {
     const [showNameOnScroll, setShowNameOnScroll] = useState(false);
+    // const [calculations, setCalculations] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(null);
+
+// CONSUMO DE API DE CÁLCULOS
+
+// const fetchData = async () => {
+//     const URL = "https://test.iclguru.com/calculation/register/";
+// }   
+
+// try {
+//     const response = await fetch(URL);
+//     console.log("RESPONSE: ", response);
+
+//     const fetchDataCalculations = await response.json();
+//     console.log("DATOS DE CÁLCULOS", fetchDataCalculations);
+
+//     setCalculations(fetchDataCalculations);
+// } catch (error) {
+//     setError(error);
+// } finally {
+//     setLoading(false);
+// }
+
+// useEffect(() => {
+//     fetchData();
+// }, []);
+
 
     useEffect(() => {
         const handleScroll = () => {

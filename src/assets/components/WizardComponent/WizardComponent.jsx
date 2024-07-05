@@ -10,6 +10,7 @@ import Form3M from "../FollowUpForms/Form3M";
 import Form6M from "../FollowUpForms/Form6M";
 import Form9M from "../FollowUpForms/Form9M";
 import Form1Y from "../FollowUpForms/Form1Y";
+import Form3Y from "../FollowUpForms/Form3Y";
 import Form5Y from "../FollowUpForms/Form5Y";
 import Form10Y from "../FollowUpForms/Form10Y";
 
@@ -40,6 +41,7 @@ const cards = [
     <Form6M key="6-months" />,
     <Form9M key="9-months" />,
     <Form1Y key="1-year" />,
+    <Form3Y key="3-years" />,
     <Form5Y key="5-years" />,
     <Form10Y key="10-years" />,
 ];
@@ -125,7 +127,7 @@ const stepTitles = [
         <Button onClick={onPrevious} disabled={step === 0}>
           Previous
         </Button>
-        <Button onClick={onNext} disabled={step === 11}>
+        <Button onClick={onNext} disabled={step === 12}>
           Next
         </Button>
       </ButtonGroup>
