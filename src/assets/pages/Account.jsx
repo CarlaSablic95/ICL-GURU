@@ -1,32 +1,27 @@
 import { useState, useEffect } from "react";
+import { fetchAccounts } from "../../ApiService";
 
 const Account = () => {
-    const [accounts, setAccounts] = useState([]);
+    const [dataAccounts, setDataAccounts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     // CONSUMO DE API DE CUENTAS
-    const fetchData = async () => {
-        const URL = "https://test.iclguru.com/accounts/profiles/";
-        
+useEffect(() => {
+    const getData = async () => {
         try {
-            const response = await fetch(URL);
-            console.log("RESPONSE: ", response)
-
-            const fetchDataAccounts = await response.json();
-            console.log("DATOS DE CUENTAS: ", fetchDataAccounts);
-
-            setAccounts(fetchDataAccounts);
+            const result = await fetchAccounts();
+            setDataAccounts(result);
+            setLoading(false);
         } catch (error) {
-            setError(error);
+            console.error("Error al obtener datos: ", error);
         } finally {
             setLoading(false);
         }
-    };
+    }
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    getData();
+}, []);
 
 
     return (
@@ -51,7 +46,7 @@ const Account = () => {
 
                     <tbody className="align-middle">
                         {
-                            (accounts.map((profile) => (
+                            (dataAccounts.map((profile) => (
                                 <tr key={profile.id}>
                                 <td className="text-center">{profile.name}</td>
                                 <td className="text-center">{profile.user}</td>

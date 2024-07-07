@@ -1,33 +1,29 @@
 import { useEffect, useState } from "react";
+import { fetchClinics } from "../../ApiService";
 
 const Clinics = () => {
-    const [clinics, setClinics] = useState([]);
+    const [dataClinics, setDataClinics] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
 
     // CONSUMO DE API DE CLÍNICAS (ORGANIZACIONES)
-    const fetchData = async () => {
-        const URL = "https://test.iclguru.com/accounts/organizations/";
-
+  useEffect(() => {
+    const getData = async () => {
         try {
-            const response = await fetch(URL);
-            console.log("RESPONSE: ", response)
-
-            const fetchDataClinics = await response.json();
-            console.log("DATOS DE CLINICAS: ", fetchDataClinics);
-
-            setClinics(fetchDataClinics)
+            const result = await fetchClinics();
+            setDataClinics(result);
+            setLoading(false);
         } catch (error) {
+            console.error("Error al obtener datos: ", error);
             setError(error);
         } finally {
             setLoading(false);
         }
-    };
+    }
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    getData();
+  }, []);
 
 
     return (
@@ -48,7 +44,7 @@ const Clinics = () => {
 
                         <tbody>
                             {
-                                (clinics.map((clinic) => (
+                                (dataClinics.map((clinic) => (
                                     <tr key={clinic.id}>
                                         <td className="text-center">{clinic.name}</td>
                                     </tr>

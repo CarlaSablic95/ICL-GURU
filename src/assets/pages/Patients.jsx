@@ -2,7 +2,6 @@ import PatientsTable from "../components/Table/PatientsTable";
 import ModalCreatePatient from "../components/Modal/ModalCreatePatient";
 import ModalEditPatient from "../components/Modal/ModalEditPatient";
 import ModalDeletePatient from "../components/Modal/ModalDeletePatient";
-// import SearchForm from "../components/Form/SearchForm";
 
 const Patients = () => {
   return (
