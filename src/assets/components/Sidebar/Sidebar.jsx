@@ -5,26 +5,31 @@ const routes = [
     path: "/",
     link: "Patients",
     icon: "./icons/user.svg",
+    activeIcon: "./icons/user-active.svg",
   },
   {
     path: "/calculations",
     link: "Calculations",
     icon: "./icons/calculation.svg",
+    activeIcon: "./icons/calculation-active.svg",
   },
   {
     path: "/clinics",
     link: "Clinics",
     icon: "./icons/clinic.svg",
+    activeIcon: "./icons/clinic-active.svg",
   },
   {
     path: "/account",
     link: "Account",
     icon: "./icons/settings.svg",
+    activeIcon: "./icons/settings-active.svg",
   },
   {
     path: "/my-account",
     link: "My account",
     icon: "./icons/edit.svg",
+    activeIcon: "./icons/edit-active.svg",
   },
 ];
 
@@ -52,7 +57,11 @@ const Sidebar = () => {
                       }`
                     }
                   >
-                        <img src={`${route.icon}`}  style={{ width:"30px"}} className="pb-2" /> {route.link}
+                       { ({ isActive }) => (
+                        <>
+                          <img src={isActive ? route.activeIcon : route.icon}  style={{ width:"30px"}} className="pb-2" /> {route.link}
+                        </>
+                      )}
                   </NavLink>
                 </li>
               ))}

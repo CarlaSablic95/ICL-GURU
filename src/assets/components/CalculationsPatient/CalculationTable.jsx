@@ -6,7 +6,7 @@ const CalculationTable = () => {
         <div className="col-10 p-5">
             <div className="mb-5">
                 <h3>ESTE COMPONENTE SE MUESTRA CUANDO SE HACE CLICK EN LOS DATOS DE UN PACIENTE (TABLA DE PACIENTES)</h3>
-                <h1 className="text-center text-uppercase">Calculations</h1>
+                <h1 className="text-center text-uppercase fs-2">Calculations</h1>
             </div>
             <div className="mb-5 d-flex flex-column align-items-center me">
                 <h5 className="mb-1">Patient:</h5>

@@ -12,31 +12,31 @@ const RightEyeResult = () => {
           </thead>
           <tbody className="">
             <tr className="text-center">
-              <td className="align-middle" style={{ backgroundColor: "#ADD7EE", borderRadius: "5px" }}>12.1 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#FF0000", borderRadius: "5px" }}>0.133 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#FF0000", borderRadius: "5px" }}>0.122 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>36°</td>
+              <td className="align-middle" style={{ backgroundColor: "#ADD7EE", borderRadius: "0" }}>12.1 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#FF0000", borderRadius: "0" }}>0.133 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#FF0000", borderRadius: "0" }}>0.122 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>36°</td>
             </tr>
 
             <tr className="text-center">
-              <td className="align-middle" style={{ backgroundColor: "#82BECA", borderRadius: "5px" }}>12.6 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>0.364 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>0.353 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>32°</td>
+              <td className="align-middle" style={{ backgroundColor: "#82BECA", borderRadius: "0" }}>12.6 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>0.364 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>0.353 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>32°</td>
             </tr>
 
             <tr className="text-center">
-              <td className="align-middle" style={{ backgroundColor: "#ADD7EE", borderRadius: "5px" }}>13.2 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>0.396 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>0.385 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>32°</td>
+              <td className="align-middle" style={{ backgroundColor: "#ADD7EE", borderRadius: "0" }}>13.2 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>0.396 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>0.385 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>32°</td>
             </tr>
 
             <tr className="text-center">
-              <td className="align-middle" style={{ backgroundColor: "#82BECA", borderRadius: "5px" }}>13.7 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>0.607 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>0.596 mm</td>
-              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "5px" }}>29°</td>
+              <td className="align-middle" style={{ backgroundColor: "#82BECA", borderRadius: "0" }}>13.7 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>0.607 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>0.596 mm</td>
+              <td className="align-middle" style={{ backgroundColor: "#1BAE18", borderRadius: "0" }}>29°</td>
             </tr>
           
           </tbody>

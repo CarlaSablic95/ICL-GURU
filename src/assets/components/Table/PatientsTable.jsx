@@ -1,49 +1,39 @@
 import { useState, useEffect } from "react";
 import ButtonModal from "../Button/ButtonModal";
-import Edit from "/icons/edit-1.svg";
+import Edit from "/icons/edit.svg";
 import Delete from "/icons/delete.svg";
+import { authenticate, fetchPatients } from "../../../ApiService";
 
 const PatientsTable = () => {
   const [dataPatient, setDataPatient] = useState([]);
-
-  // Variable de estado que almacena el texto ingresado por el usuario en el campo de búsqueda
   const [searchPatient, setSearchPatient] = useState("");
-
-  // Variable de estado que almacena la lista de pacientes filtrados
   const [filteredPatients, setFilteredPatients] = useState([]);
-
   const [loading, setLoading] = useState(true);  
   const [error, setError] = useState(null);
 
-
-  // CONSUMO DE API DE PACIENTES
-  const fetchData = async () => {
-    const URL = "https://test.iclguru.com/patients/patients/";
+  useEffect(() => {
+    const getData = async () => {
       try {
-        const response = await fetch(URL);
-        console.log("RESPONSE: ", response)
-       
-
-        const fetchDataPatient = await response.json();
-        console.log("DATOS DE PACIENTES: ", fetchDataPatient)
-        
-        setDataPatient(fetchDataPatient);
-        setFilteredPatients(fetchDataPatient);
+        await authenticate("user.demo", "U4u4iclguru$")
+        const result = await fetchPatients();
+        setDataPatient(result);
+        setFilteredPatients(result);
+        setLoading(false);
       } catch (error) {
+        console.error("Error al obtener datos: ", error);
         setError(error);
       } finally {
         setLoading(false);
       }
     };
-    
-  useEffect(() => {
-    fetchData();
+
+    getData();
   }, []);
-
-
+ 
 // FILTRO DE PACIENTES
 const filterPatients = (event) => {
   const filterValue = event.target.value.toLowerCase();
+
   console.info("VALOR INGRESADO: ", filterValue)
 
   // Se actualiza la variable de estado "searchPatient" con el valor filtrado

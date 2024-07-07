@@ -16,13 +16,12 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { username, email, password } = data;
+    const { username, password } = data;
         console.log("Username:", username);
-        console.log("Email:", email);
         console.log("Password:", password);
   };
 
-  const isFormInvalid = !!errors.username || !!errors.email || !!errors.password;
+  const isFormInvalid = !!errors.username || !!errors.password;
 
   return (
       <section className="bg-login d-flex  align-items-center">
@@ -44,27 +43,6 @@ const Login = () => {
                             <small className="text-danger">This field is required</small>
                             )}
                             <label htmlFor="username">Username</label>
-                        </div>
-
-                        <div className="form-floating mb-3 text-center">
-                            <input
-                            {...register("email", {
-                                required: true,
-                                pattern: /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                            })}
-                            placeholder="Email"
-                            className={`form-control rounded-5 border-2 ${errors.email ? "border border-danger" : ""} `}
-                            id="email"
-                            type="email"
-                            />
-                            {errors.email && (
-                            <small className="text-danger">
-                                { errors.email.type === "required" && "This field is required" }
-                                { errors.email.type === "pattern" && "Invalid email format" }
-                            </small>
-
-                            )}
-                            <label htmlFor="email">Email</label>
                         </div>
 
                         <div className="form-floating mb-3 text-center">

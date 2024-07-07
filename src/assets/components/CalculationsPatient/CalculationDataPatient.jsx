@@ -16,10 +16,16 @@ const CalculationDataPatient = () => {
     const [showOS, setShowOS] = useState(true);
 
     const handleShowOD = (e) => {
+        if(!showOS && !e.target.checked) {
+            return;
+        }
         setShowOD(e.target.checked);
     }
 
     const handleShowOS = (e) => {
+        if(!showOD && !e.target.checked) {
+            return;
+        }
         setShowOS(e.target.checked);
     }
 
@@ -40,8 +46,8 @@ const CalculationDataPatient = () => {
                         <div className="mb-3">
                                     <p className="fw-bold text-center">Eye</p>
                                 <div className="d-flex justify-content-center">
-                                    <InputCheckbox label="OD" name="eye" id="od" value="od" bgColor="rgb(72, 136, 200)" onChange={handleShowOD} />
-                                    <InputCheckbox label="OS" name="eye" id="os" value="os" bgColor="rgb(47, 178, 151)" onChange={handleShowOS} />
+                                    <InputCheckbox label="OD" name="eye" id="od" value="od" bgColor="rgb(72, 136, 200)" onChange={handleShowOD} checked={showOD} />
+                                    <InputCheckbox label="OS" name="eye" id="os" value="os" bgColor="rgb(47, 178, 151)" onChange={handleShowOS} checked={showOS} />
                                 </div>
                         </div>
                     </form>
@@ -100,11 +106,6 @@ const CalculationDataPatient = () => {
                             </div>
                         <LeftEyeResult />
                     </div>)}
-                {(!showOD && !showOS) && (
-                    <div className="text-center mt-5">
-                        <h3>No eye data selected</h3>
-                    </div>
-                )}
                 </section>
 
             </div>

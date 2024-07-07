@@ -221,12 +221,14 @@ input[type="text"], input[type="number"] {
     background-image: url("/bg-fondo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 50%;
     border-radius: 50px 0 0 50px;
+    filter: brightness(0.5);
 }
 
 .form-login {
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.36));
+    height: 55vh;
 }
 
 .button {

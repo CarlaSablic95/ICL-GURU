@@ -1,4 +1,4 @@
-import Edit from "/icons/edit-1.svg";
+import Edit from "/icons/edit.svg";
 import Delete from "/icons/delete.svg";
 import Eye from "../Eyes/Eye";
 

@@ -48,62 +48,6 @@ const Form1D = () => {
                 </div>
               </div>
 
-                {/* BCVA: */}
-              <div className="col-10 col-md-4 mb-4">
-                <div className="d-flex flex-column align-items-start">
-                  <p className="fw-bold mb-2">BCVA:</p>
-                  <div className="input-group">
-                    <select
-                      className="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option defaultValue="selected">Select an option</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-                {/* RX */}
-                {/* Sphere */}
-            <div className="row justify-content-center justify-content-md-start">
-                <p className="fw-bold">RX</p>
-              <div className="col-10 col-md-4 mb-4">
-                <div className="d-flex flex-column align-items-start">
-                  <p className="fw-bold mb-2">Sphere:</p>
-                  <div className="input-group">
-                      <input type="number" step="0.1" className="form-control" id="id_rx_sph_IMM" aria-describedby="RX Sphere" name="rx_sph" />
-                      <span className="input-group-text" id="basic-addon2">D</span>
-                  </div>
-                </div>
-              </div>
-
-                {/* Cylinder: */}
-              <div className="col-10 col-md-4 mb-3">
-                <div className="d-flex flex-column align-items-start">
-                  <p className="fw-bold mb-2">Cylinder:</p>
-                  <div className="input-group">
-                      <input type="number" step="0.1" className="form-control" id="id_rx_sph_IMM" aria-describedby="RX Sphere" name="rx_sph" />
-                      <span className="input-group-text" id="basic-addon2">D</span>
-                  </div>
-                </div>
-              </div>
-
-               {/* Axis: */}
-               <div className="col-10 col-md-4 mb-3">
-                <div className="d-flex flex-column align-items-start mb-4">
-                  <p className="fw-bold mb-2">Axis:</p>
-                  <div className="input-group">
-                      <input type="number" step="0.1" className="form-control" id="id_rx_sph_IMM" aria-describedby="RX Sphere" name="rx_sph" />
-                      <span className="input-group-text" id="basic-addon2">°</span>
-                  </div>
-                </div>
-              </div>
-              </div>
-
               {/* IOL */}
               {/* Central vault */}
               <div className="row justify-content-center justify-content-md-start">
@@ -173,6 +117,71 @@ const Form1D = () => {
                   </div>
                 </div>
             </div>
+
+                {/* BCVA: */}
+              <div className="col-10 col-md-4 mb-4">
+                <div className="d-flex flex-column align-items-start">
+                  <p className="fw-bold mb-2">BCVA:</p>
+                  <div className="input-group">
+                    <select
+                      className="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option defaultValue="selected">Select an option</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                {/* RX */}
+                {/* Sphere */}
+            <div className="row justify-content-center justify-content-md-start">
+                <p className="fw-bold">RX</p>
+              <div className="col-10 col-md-4 mb-4">
+                <div className="d-flex flex-column align-items-start">
+                  <p className="fw-bold mb-2">Sphere:</p>
+                  <div className="input-group">
+                      <input type="number" step="0.1" className="form-control" id="id_rx_sph_IMM" aria-describedby="RX Sphere" name="rx_sph" />
+                      <span className="input-group-text" id="basic-addon2">D</span>
+                  </div>
+                </div>
+              </div>
+
+                {/* Cylinder: */}
+              <div className="col-10 col-md-4 mb-3">
+                <div className="d-flex flex-column align-items-start">
+                  <p className="fw-bold mb-2">Cylinder:</p>
+                  <div className="input-group">
+                      <input type="number" step="0.1" className="form-control" id="id_rx_sph_IMM" aria-describedby="RX Sphere" name="rx_sph" />
+                      <span className="input-group-text" id="basic-addon2">D</span>
+                  </div>
+                </div>
+              </div>
+
+               {/* Axis: */}
+               <div className="col-10 col-md-4 mb-3">
+                <div className="d-flex flex-column align-items-start mb-4">
+                  <p className="fw-bold mb-2">Axis:</p>
+                  <div className="input-group">
+                      <input type="number" step="0.1" className="form-control" id="id_rx_sph_IMM" aria-describedby="RX Sphere" name="rx_sph" />
+                      <span className="input-group-text" id="basic-addon2">°</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              {/* INPUT FILE */}
+              <div className="mb-3">
+                <label htmlFor="formFile" className="form-label">Default file input example</label>
+                <input className="form-control" type="file" id="formFile" />
+              </div>
+
+              {/* Button form */}
+              
             <div className="d-flex justify-content-center">
               <Button
                 title="Save"
@@ -182,6 +191,7 @@ const Form1D = () => {
                 textTransform="uppercase"
               />
             </div>
+              
           </div>
         </form>
       </div>

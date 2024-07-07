@@ -5,32 +5,37 @@ const routes = [
     path: "/",
     link: "Patients",
     icon: "./icons/user.svg",
+    activeIcon: "./icons/user-active.svg",
   },
   {
     path: "/calculations",
     link: "Calculations",
     icon: "./icons/calculation.svg",
+    activeIcon: "./icons/calculation-active.svg",
   },
   {
     path: "/clinics",
     link: "Clinics",
     icon: "./icons/clinic.svg",
+    activeIcon: "./icons/clinic-active.svg",
   },
   {
     path: "/account",
     link: "Account",
     icon: "./icons/settings.svg",
+    activeIcon: "./icons/settings-active.svg",
   },
   {
     path: "/my-account",
     link: "My account",
     icon: "./icons/edit.svg",
+    activeIcon: "./icons/edit-active.svg",
   },
 ];
 
 const NavbarMobile = () => {
   return (
-    <nav className="navbar navbar-mobile py-4 d-block d-lg-none">
+    <nav className="navbar navbar-mobile py-4 d-flex d-lg-none">
       <div className="container-fluid">
         <button
           className="navbar-toggler rounded-5"
@@ -85,7 +90,13 @@ const NavbarMobile = () => {
                       }`
                     }
                   >
-                        <img src={`${route.icon}`}  style={{ width:"30px"}} className="pb-2" /> {route.link}
+                        {
+                        ({ isActive }) => (
+                        <>
+                          <img src={ isActive ? route.activeIcon : route.icon}  style={{ width:"30px"}} className="pb-2" /> {route.link}
+                          </>
+                          )}
+                        
                   </NavLink>
                 </li>
               ))}
