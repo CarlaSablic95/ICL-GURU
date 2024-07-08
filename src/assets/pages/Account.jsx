@@ -15,6 +15,7 @@ useEffect(() => {
             setLoading(false);
         } catch (error) {
             console.error("Error al obtener datos: ", error);
+            setError(error);
         } finally {
             setLoading(false);
         }

@@ -1,26 +1,35 @@
-import { BASE_URL, ACCESS_TOKEN } from "../config";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
+const USERNAME = import.meta.env.VITE_VITE_USERNAME;
+const PASSWORD = import.meta.env.VITE_PASSWORD;
+
+console.log('BASE_URL:', BASE_URL);
+console.log('ACCESS_TOKEN:', ACCESS_TOKEN);
+
 
 let accessToken = ACCESS_TOKEN;
 
 // Autenticación para acceder a la API
-export const authenticate = async (username, password) => {
+export const authenticate = async (username = USERNAME, password = PASSWORD) => {
     try {
         const response = await fetch(`${BASE_URL}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify(
+                { username, password })
         });
-
+        
         if(!response.ok) {
             throw new Error("Error al autenticar");
         }
-
+       
         const data = await response.json();
         accessToken = data.accessToken;
-
         return data;
+        
     } catch (error) {
         console.error(error);
         throw error;
@@ -30,17 +39,20 @@ export const authenticate = async (username, password) => {
 // Obtención de datos (GET)
 export const fetchData = async () => {
     try {
-        const response = await fetch(BASE_URL);
-        if(!response.ok) {
+        console.log("Fetching data from:", BASE_URL); // Añadir registro de URL
+        const response = await fetch(`${BASE_URL}, { cache: 'no-store' }`);
+        console.log("Response status:", response.status); // Añadir registro del estado de la respuesta
+        if (!response.ok) {
             throw new Error('Error al obtener los datos');
         }
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error(error);
+        console.error("Error en fetchData:", error);
         throw error;
     }
 };
+
 
 // Función para obtener datos de pacientes (GET)
 export const fetchPatients = async () => {
@@ -48,12 +60,13 @@ export const fetchPatients = async () => {
         const response = await fetch(`${BASE_URL}/patients/patients`, {
             headers: {
                 "Authorization": `Bearer ${accessToken}`
-            }
+            },
+            cache: "no-store"
         });
+        const data = await response.json();
         if(!response.ok) {
             throw new Error("Error al obtener los datos de pacientes");
         }
-        const data = await response.json();
         return data;
     } catch (error) {
         console.error(error);
@@ -69,16 +82,19 @@ export const fetchClinics = async () => {
                 "Authorization": `Bearer ${accessToken}`
             }
         });
-        if(!response.ok) {
-            throw new Error("Error al obtener los datos de clínicas");
+
+        if (!response.ok) {
+            throw new Error(`Error al obtener los datos de clínicas: ${response.statusText}`);
         }
+
         const data = await response.json();
         return data;
     } catch (error) {
         console.error(error);
-        throw error;
+        throw error; // Re-lanza el error para que se maneje en el componente que llama a fetchClinics
     }
 };
+
 
 // Función para obtener datos de clínicas (GET)
 export const fetchAccounts = async () => {
