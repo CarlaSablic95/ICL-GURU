@@ -1,38 +1,36 @@
-
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
+const USERNAME = import.meta.env.VITE_USERNAME;
+const PASSWORD = import.meta.env.VITE_PASSWORD;
 
 console.log('BASE_URL:', BASE_URL);
 console.log('ACCESS_TOKEN:', ACCESS_TOKEN);
 
-
 let accessToken = ACCESS_TOKEN;
 
 // Autenticación para acceder a la API
-export const authenticate = async (username, password) => {
+export const authenticate = async (username = USERNAME, password = PASSWORD) => {
     try {
-        const response = await fetch(`${BASE_URL}`, {
+        const response = await fetch(BASE_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(
-                { username, password })
+            body: JSON.stringify({ username, password })
         });
-        
-        if(!response.ok) {
+
+        if (!response.ok) {
             throw new Error("Error al autenticar");
         }
-       
+
         const data = await response.json();
         accessToken = data.accessToken;
         return data;
-        
     } catch (error) {
         console.error(error);
         throw error;
     }
-}
+};
 
 // Obtención de datos (GET)
 export const fetchData = async () => {
@@ -74,10 +72,12 @@ export const fetchPatients = async () => {
 // Función para obtener datos de clínicas (GET)
 export const fetchClinics = async () => {
     try {
+        console.log('Fetching clinics from:', `${BASE_URL}/accounts/organizations`);
         const response = await fetch(`${BASE_URL}/accounts/organizations`, {
             headers: {
                 "Authorization": `Bearer ${accessToken}`
-            }
+            },
+            cache: 'no-store'
         });
 
         if (!response.ok) {
@@ -91,6 +91,7 @@ export const fetchClinics = async () => {
         throw error; // Re-lanza el error para que se maneje en el componente que llama a fetchClinics
     }
 };
+
 
 
 // Función para obtener datos de clínicas (GET)

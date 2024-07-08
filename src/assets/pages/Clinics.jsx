@@ -38,7 +38,7 @@ const Clinics = () => {
                     <table className="table">
                     <thead>
                         <tr>
-                        <th scope="col" className="text-center">Name</th>
+                            <th scope="col" className="text-center">Name</th>
                         </tr>
                     </thead>
 
