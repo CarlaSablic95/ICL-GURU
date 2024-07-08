@@ -1,7 +1,5 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
-const USERNAME = import.meta.env.VITE_USERNAME;
-const PASSWORD = import.meta.env.VITE_PASSWORD;
 
 console.log('BASE_URL:', BASE_URL);
 console.log('ACCESS_TOKEN:', ACCESS_TOKEN);
@@ -9,7 +7,7 @@ console.log('ACCESS_TOKEN:', ACCESS_TOKEN);
 let accessToken = ACCESS_TOKEN;
 
 // Autenticación para acceder a la API
-export const authenticate = async (username = USERNAME, password = PASSWORD) => {
+export const authenticate = async (username, password) => {
     try {
         const response = await fetch(BASE_URL, {
             method: "POST",
