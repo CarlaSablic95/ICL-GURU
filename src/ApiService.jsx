@@ -1,5 +1,4 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
+import { BASE_URL, ACCESS_TOKEN } from "../config";
 
 console.log('BASE_URL:', BASE_URL);
 console.log('ACCESS_TOKEN:', ACCESS_TOKEN);
