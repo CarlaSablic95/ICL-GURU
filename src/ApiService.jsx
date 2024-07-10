@@ -6,21 +6,20 @@ console.log('ACCESS_TOKEN:', ACCESS_TOKEN);
 let accessToken = ACCESS_TOKEN;
 
 // Autenticación para acceder a la API
-export const authenticate = async (username, password) => {
+console.log("HOLA MUNDO");
+export const authenticate = async () => {
     try {
-        const response = await fetch(BASE_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ username, password })
-        });
+        const response = await fetch(BASE_URL);
+
+        console.log("RESPUESTA: ", response);
 
         if (!response.ok) {
             throw new Error("Error al autenticar");
         }
 
         const data = await response.json();
+        console.log("DATOS: ", data);
+
         accessToken = data.accessToken;
         return data;
     } catch (error) {
@@ -32,9 +31,9 @@ export const authenticate = async (username, password) => {
 // Obtención de datos (GET)
 export const fetchData = async () => {
     try {
-        console.log("Fetching data from:", BASE_URL); // Añadir registro de URL
+        console.log("Fetching data from:", BASE_URL);
         const response = await fetch(`${BASE_URL}`);
-        console.log("Response status:", response.status); // Añadir registro del estado de la respuesta
+        console.log("Response status:", response.status);
         if (!response.ok) {
             throw new Error('Error al obtener los datos');
         }
@@ -73,8 +72,7 @@ export const fetchClinics = async () => {
         const response = await fetch(`${BASE_URL}/accounts/organizations`, {
             headers: {
                 "Authorization": `Bearer ${accessToken}`
-            },
-            cache: 'no-store'
+            }
         });
 
         if (!response.ok) {
@@ -85,7 +83,7 @@ export const fetchClinics = async () => {
         return data;
     } catch (error) {
         console.error(error);
-        throw error; // Re-lanza el error para que se maneje en el componente que llama a fetchClinics
+        throw error;
     }
 };
 
