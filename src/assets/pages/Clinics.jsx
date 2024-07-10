@@ -9,7 +9,7 @@ const Clinics = () => {
 
     // CONSUMO DE API DE CLÍNICAS (ORGANIZACIONES)
   useEffect(() => {
-    const getData = async () => {
+      const getClinics = async () => {
         try {
             const result = await fetchClinics();
             setDataClinics(result);
@@ -22,8 +22,9 @@ const Clinics = () => {
         }
     }
 
-    getData();
+    getClinics();
   }, []);
+
 
 
     return (
