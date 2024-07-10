@@ -20,16 +20,17 @@ export const authenticate = async () => {
                 password: "U4u4iclguru$"
             })
         });
-        // console.log("RESPUESTA: ", response);
-
        
             const data = await response.json();
             console.log("DATOS: ", data);
 
+            if(response.ok) {
+                accessToken = data.ACCESS_TOKEN;
+                return data;
+            } else {
+                throw new Error(data.error || "Error de autenticación");
+            }
 
-        accessToken = data.ACCESS_TOKEN;
-
-        return data;
     } catch (error) {
         console.error(error);
         throw error;
@@ -103,7 +104,7 @@ export const fetchClinics = async () => {
     }
 
         const data = await response.json();
-        return data.result;
+        return data;
     } catch (error) {
         console.error(error);
         throw error;
