@@ -1,7 +1,12 @@
-import { useEffect, useState } from "react";
-import { fetchClinics } from "../../ApiService";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { getClinics } from "../../ApiService";
+
 
 const Clinics = () => {
+    const { accessToken } = useContext(AuthContext);
+
+    console.log("USE CONTEXT: ", {accessToken}); // null
     const [dataClinics, setDataClinics] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -9,9 +14,10 @@ const Clinics = () => {
 
     // CONSUMO DE API DE CLÍNICAS (ORGANIZACIONES)
   useEffect(() => {
-      const getClinics = async () => {
+      const getData = async () => {
         try {
-            const result = await fetchClinics();
+            const result = await getClinics(accessToken);
+            console.log("RESULTADO API CLINICA: ", result);
             setDataClinics(result);
             setLoading(false);
         } catch (error) {
@@ -22,8 +28,8 @@ const Clinics = () => {
         }
     }
 
-    getClinics();
-  }, []);
+    getData();
+  }, [accessToken]);
 
 
 

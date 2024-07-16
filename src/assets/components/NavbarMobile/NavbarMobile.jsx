@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
 
 const routes = [
   {
@@ -34,6 +37,7 @@ const routes = [
 ];
 
 const NavbarMobile = () => {
+  const { user } = useContext(AuthContext);
   return (
     <nav className="navbar navbar-mobile py-4 d-flex d-lg-none">
       <div className="container-fluid">
@@ -59,7 +63,7 @@ const NavbarMobile = () => {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-              User
+              { `User: ${user?.username}` }
             </h5>
             <button
               type="button"

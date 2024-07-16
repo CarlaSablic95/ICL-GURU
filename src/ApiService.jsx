@@ -1,158 +1,127 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
 
-console.log('RESULTADO - BASE_URL:', BASE_URL);
-console.log('RESULTADO - ACCESS_TOKEN:', ACCESS_TOKEN);
+const BASE_URL = "https://test.iclguru.com";
+console.log("URL BASE: " + BASE_URL);
 
-let accessToken = ACCESS_TOKEN;
-
-// Autenticación para acceder a la API
-
-export const authenticate = async () => {
+export const authenticate = async (credentials) => {
     try {
-        const response = await fetch(`${BASE_URL}/accounts/token`, {
+        const response = await fetch(`${BASE_URL}/accounts/token/`, {
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(credentials) // username y password
+        });
+
+        console.log("RESPONSE: ", response); // STATUS 200, TODO OK
+
+        if(!response.ok) {
+            throw new Error("Incorrect username or password.");
+        }
+        
+        const data = await response.json();
+        console.log("AUTHENTICATE - DATA ACCESS: ", data.access); // CONECTA CORRECTAMENTE CON LOS DATOS
+        console.log("AUTHENTICATE - DATA REFRESH: ", data.refresh); // CONECTA CORRECTAMENTE CON LOS DATOS
+        console.log("AUTHENTICATE - CREDENTIALS: ", credentials); // CONECTA CORRECTAMENTE CON LOS DATOS
+        // Cuando ingresa me guarda CORRECTAMENTE ambos token, en session Storage
+        localStorage.setItem("accessToken", data.access);
+        localStorage.setItem("refreshToken", data.refresh);
+        localStorage.setItem("user", JSON.stringify(credentials));
+        return data;
+    } catch (error) {
+        console.error("Error during authentication: ", error);
+        throw error;
+    }
+
+};
+
+export const refreshAcccessToken = async () => {
+    const refreshToken = localStorage.getItem("refreshToken");
+
+    if(!refreshToken) {
+        throw new Error("No refresh token found");
+    }
+
+    try {
+        const response = await fetch(`${BASE_URL}/accounts/refresh-token`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                username: "user.demo",
-                password: "U4u4iclguru$"
-            })
+            body: JSON.stringify({ refreshToken })
         });
-       
-            const data = await response.json();
-            console.log("DATOS: ", data);
 
-            if(response.ok) {
-                accessToken = data.ACCESS_TOKEN;
-                return data;
-            } else {
-                throw new Error(data.error || "Error de autenticación");
-            }
-
-    } catch (error) {
-        console.error(error);
-        throw error;
-    }
-};
-
-// Obtención de datos (GET)
-// export const fetchData = async () => {
-//     try {
-//         console.log("Fetching data from:", BASE_URL);
-//         const response = await fetch(`${BASE_URL}`, {
-//             method: "GET",
-//             headers: {
-//                 "Authorization": `Bearer ${ACCESS_TOKEN}`,
-//                 "Content-Type": "application/json"
-//             }
-//         });
-//         console.log("Response status:", response.status);
-//         if (!response.ok) {
-//             throw new Error('Error al obtener los datos');
-//         }
-//         const data = await response.json();
-//         return data;
-//     } catch (error) {
-//         console.error("Error en fetchData:", error);
-//         throw error;
-//     }
-// };
-
-
-// Función para obtener datos de pacientes (GET)
-export const fetchPatients = async () => {
-    try {
-        const response = await fetch(`${BASE_URL}/patients/patients`, {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${accessToken}`,
-                    "Content-Type": "application/json"
-                }
-        });
-        const data = await response.json();
         if(!response.ok) {
-            throw new Error("Error al obtener los datos de pacientes");
+            throw new Error(`HTTP error! status: ${response.status}`)
         }
-        return data;
-    } catch (error) {
-        console.error(error);
+
+        const data = await response.json();
+        localStorage.setItem("accessToken", data.access);
+        return data.access;
+    } catch(error) {
+        console.error("Error during token refresh: ", error);
         throw error;
     }
-};
+}
 
-// Función para obtener datos de clínicas (GET)
-export const fetchClinics = async () => {
+// PATIENTS
+export const getPatients = async (accessToken) => {
     try {
-        console.log('Fetching clinics from:', `${BASE_URL}/accounts/organizations`);
-        const response = await fetch(`${BASE_URL}/accounts/organizations`, {
-            method: "GET",
+        const response = await fetch(`${BASE_URL}/patients/patients/`, {
+            method:"GET",
             headers: {
                 "Authorization": `Bearer ${accessToken}`,
                 "Content-Type": "application/json"
             }
         });
-
-        console.log('RESPONSE STATUS:', response.status);
-        console.log('RESPONSE HEADERS:', response.headers);
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.log('Error text:', errorText);
-            throw new Error(`Error al obtener los datos de clínicas: ${response.statusText}`);
-    }
-
         const data = await response.json();
+        console.log("DATA: ", data);
+        if(!response.ok) {
+            throw new Error("Error al obtener pacientes");
+        }
         return data;
     } catch (error) {
-        console.error(error);
+        console.error("Error: ", error);
         throw error;
     }
-};
+}
 
-
-// Función para obtener datos de clínicas (GET)
-export const fetchAccounts = async () => {
-    try {
-        const response = await fetch(`${BASE_URL}/accounts/profiles/`, {
-            method: "GET",
+// CLINICS
+export const getClinics = async (accessToken) => {
+    
+        const response = await fetch(`${BASE_URL}/accounts/organizations/`, {
+            method:"GET",
             headers: {
                 "Authorization": `Bearer ${accessToken}`,
                 "Content-Type": "application/json"
             }
         });
-        if(!response.ok) {
-            throw new Error("Error al obtener los datos de cuentas");
-        }
         const data = await response.json();
+        console.log("DATA: ", data);
+        if(!response.ok) {  
+            throw new Error("Error al obtener clínicas");
+        }
+        return data;
+    
+}
+
+// ACCOUNTS
+export const getAccounts = async (accessToken) => {
+    try {
+        const response = await fetch(`${BASE_URL}/accounts/profiles`, {
+            method:"GET",
+            headers: {
+                "Authorization": `Bearer ${accessToken}`,
+                "Content-Type": "application/json"
+            }
+        });
+        const data = await response.json();
+        console.log("DATA: ", data);
+        if(!response.ok) {
+            throw new Error("Error al obtener cuentas");
+        }
         return data;
     } catch (error) {
-        console.error(error);
+        console.error("Error: ", error);
         throw error;
     }
-};
-
-// Envío de datos (POST)
-
-export const postData = async (endpoint, payload) => {
-    try {
-        const response = await fetch(`${BASE_URL}/${endpoint}`, {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": `Bearer ${accessToken}`
-            },
-            body: JSON.stringify(payload)
-        });
-
-        if(!response.ok) {
-         throw new Error("Error al enviar los datos");
-        }
-        const data = await response.json(); 
-        return data;
-    } catch (error) {
-            console.error(error);
-            throw error;
-        }
 }

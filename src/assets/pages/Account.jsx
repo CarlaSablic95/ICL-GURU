@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
-import { fetchAccounts } from "../../ApiService";
+import { useState, useEffect, useContext } from "react";
+import { getAccounts } from "../../ApiService";
+import { AuthContext } from "../context/AuthContext";
 
 const Account = () => {
+    const { accessToken } = useContext(AuthContext)
     const [dataAccounts, setDataAccounts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -10,7 +12,7 @@ const Account = () => {
 useEffect(() => {
     const getData = async () => {
         try {
-            const result = await fetchAccounts();
+            const result = await getAccounts(accessToken);
             setDataAccounts(result);
             setLoading(false);
         } catch (error) {
@@ -22,7 +24,7 @@ useEffect(() => {
     }
 
     getData();
-}, []);
+}, [accessToken]);
 
 
     return (

@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+// import { logout } from "../../context/AuthProvider";
+
 const ModalLogout = () => {
+
+    const { logout } = useContext(AuthContext)
+    
   return (
     <div className="col-10 px-5">
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -12,7 +19,8 @@ const ModalLogout = () => {
                         </div>
                         <div className="d-flex justify-content-evenly pb-3">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                            <button type="button" className="btn btn-primary border-0" style={{ backgroundColor: "#3DC2DD" }} data-bs-dismiss="modal">Yes</button>
+                            {/* <button type="button" className="btn btn-primary border-0" style={{ backgroundColor: "#3DC2DD" }} data-bs-dismiss="modal" onClick={ logout } disabled={ loading }>{ loading ? (<div className="d-flex justify-content-center align-items-center"><span className="me-1"></span> <span className="loader"></span></div>) : "Yes"}</button> */}
+                            <button type="button" className="btn btn-primary border-0" style={{ backgroundColor: "#3DC2DD" }} data-bs-dismiss="modal" onClick={ logout }>Yes</button>
                         </div>
                     </div>
                 </div>

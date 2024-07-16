@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ButtonModal from "../Button/ButtonModal";
 import Edit from "/icons/edit.svg";
 import Delete from "/icons/delete.svg";
-import { authenticate, fetchPatients } from "../../../ApiService";
+import { authenticate, getPatients } from "../../../ApiService";
+import { AuthContext } from "../../context/AuthContext";
 
 const PatientsTable = () => {
+  const { accessToken } = useContext(AuthContext);
   const [dataPatient, setDataPatient] = useState([]);
   const [searchPatient, setSearchPatient] = useState("");
   const [filteredPatients, setFilteredPatients] = useState([]);
@@ -14,8 +16,8 @@ const PatientsTable = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        await authenticate("user.demo", "U4u4iclguru$")
-        const result = await fetchPatients();
+        const result = await getPatients(accessToken);
+        console.log("RESULTADO API PACIENTES: ", result);
         setDataPatient(result);
         setFilteredPatients(result);
         setLoading(false);
@@ -28,7 +30,7 @@ const PatientsTable = () => {
     };
 
     getData();
-  }, []);
+  }, [accessToken]);
  
 // FILTRO DE PACIENTES
 const filterPatients = (event) => {
